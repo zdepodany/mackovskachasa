@@ -8,11 +8,17 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
     <nav class="navbar">
         <div class="container">
-            <h1>Mackovská chasa z.s.</h1>
+            <div class="logo-container">
+                <a href="index.html">
+                    <img src="img/mackovskachasa_logo.svg" alt="Logo Mackovská chasa z.s." class="logo">
+                </a>
+                <h1><a href="index.html">Mackovská chasa z.s.</a></h1>
+            </div>
             <button class="hamburger" aria-label="Menu">
                 <span></span>
                 <span></span>
@@ -21,18 +27,22 @@
             <ul class="nav-links">
                 <li><a href="#domu">Domů</a></li>
                 <li><a href="#o-nas">O nás</a></li>
+                <li><a href="#výbor">Výbor</a></li>
+                <li><a href="#stanovy">Stanovy</a></li>
                 <li><a href="#kontakt">Kontakt</a></li>
             </ul>
         </div>
     </nav>
 
-    <header class="hero" id="domu">
+    <section class="hero" id="domu">
         <div class="container">
-            <h2>Vítejte na stránkách Mackovské chasy</h2>
-            <p>Jsme spolek nadšenců, který se stará o udržování folklórních tradic
-               a pořádání krojovaných hodů v obci Mackovice.</p>
+            <div class="hero-content">
+                <img src="img/mackovskachasa_logo.svg" alt="Logo Mackovská chasa z.s." class="hero-logo">
+                <h2>Mackovská chasa z.s.</h2>
+                <p>Spolek pro zachování a propagaci lidových tradic a kultury v obci Mackovice</p>
+            </div>
         </div>
-    </header>
+    </section>
 
     <main>
         <section id="o-nas" class="section">
@@ -41,8 +51,251 @@
                 <p>Hlavním cílem našeho spolku je zachování a rozvoj kulturního dědictví
                    obce Mackovice, zejména prostřednictvím organizace tradičních
                    krojovaných hodů a dalších folklórních akcí.</p>
+            </div>
+        </section>
+
+        <section id="výbor" class="section section-alt">
+            <div class="container">
+                <h2>Výbor spolku</h2>
+                <div class="committee-description">
+                    <p>Výbor spolku je statutárním orgánem Mackovské chasy z.s. Členové výboru jsou voleni členskou schůzí na funkční období pěti let.</p>
+                </div>
+                <div class="committee-grid">
+                    <div class="committee-member">
+                        <div class="member-icon">
+                            <i class="fas fa-user-tie"></i>
+                        </div>
+                        <h4>Předseda</h4>
+                        <p>Zdeněk Podaný</p>
+                    </div>
+                    <div class="committee-member">
+                        <div class="member-icon">
+                            <i class="fas fa-user-shield"></i>
+                        </div>
+                        <h4>Místopředseda</h4>
+                        <p>Milan Hoff</p>
+                    </div>
+                    <div class="committee-member">
+                        <div class="member-icon">
+                            <i class="fas fa-wallet"></i>
+                        </div>
+                        <h4>Pokladník</h4>
+                        <p>Martin Dokoupil</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="stanovy" class="section">
+            <div class="container">
+                <h2>Stanovy spolku</h2>
+                <div class="statutes-container">
+                    <div class="statute-section">
+                        <button class="accordion">Článek 1 - Základní ustanovení</button>
+                        <div class="accordion-content">
+                            <p><strong>Název spolku:</strong> Mackovská chasa z. s.</p>
+                            <p><strong>Sídlo spolku:</strong> Mackovice 23, 671 78</p>
+                        </div>
+                    </div>
+                    <div class="statute-section">
+                        <button class="accordion">Článek 2 - Účel spolku</button>
+                        <div class="accordion-content">
+                            <ul>
+                                <li>Podpora a rozvoj tradičních lidových zvyků v obci Mackovice a okolí, zejména krojovaných hodů.</li>
+                                <li>Zapojení mladých lidí do kulturního a společenského života prostřednictvím účasti na pořádání tradičních akcí.</li>
+                                <li>Organizace a koordinace krojovaných hodů a dalších folklórních a kulturních aktivit, které podporují místní tradice a posilují komunitní vazby.</li>
+                                <li>Spolupráce s místními spolky, obcí a dalšími organizacemi na zachování a propagaci kulturního dědictví.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="statute-section">
+                        <button class="accordion">Článek 3 - Členství</button>
+                        <div class="accordion-content">
+                            <h4>Vznik členství</h4>
+                            <ul>
+                                <li>O přijetí nových členů rozhoduje členská schůze hlasováním na základě podané přihlášky.</li>
+                            </ul>
+                            
+                            <h4>Zánik členství</h4>
+                            <ul>
+                                <li>Členství zaniká na základě písemného oznámení člena o jeho vystoupení ze spolku.</li>
+                                <li>Člen může být vyloučen rozhodnutím členské schůze, pokud závažně porušuje stanovy nebo jedná v rozporu s cíli spolku.</li>
+                                <li>Členství automaticky zaniká, pokud člen nezaplatí členské příspěvky po dobu delší než 12 měsíců.</li>
+                                <li>U fyzické osoby členství zaniká jejím úmrtím.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="statute-section">
+                        <button class="accordion">Článek 4 - Práva a povinnosti členů</button>
+                        <div class="accordion-content">
+                            <h4>Práva členů spolku</h4>
+                            <ul>
+                                <li>Členové mají právo účastnit se všech schůzí, akcí a projektů organizovaných spolkem.</li>
+                                <li>Členové mají právo hlasovat o důležitých záležitostech na členské schůzi, včetně voleb do orgánů spolku a změn stanov.</li>
+                                <li>Členové mají právo navrhovat nové aktivity, akce nebo změny týkající se činnosti spolku.</li>
+                                <li>Členové mají právo být pravidelně informováni o hospodaření spolku a jeho aktivitách.</li>
+                                <li>Každý člen má právo kdykoliv ukončit své členství oznámením o vystoupení.</li>
+                            </ul>
+                            
+                            <h4>Povinnosti členů spolku</h4>
+                            <ul>
+                                <li>Členové jsou povinni řídit se stanovami spolku a respektovat rozhodnutí členské schůze.</li>
+                                <li>Členové jsou povinni přispívat členským příspěvkem ve výši 1000 Kč jednou za dvanáct měsíců.</li>
+                                <li>Členové jsou povinni aktivně se podílet na činnosti spolku, například pomáhat při organizaci akcí.</li>
+                                <li>Členové jsou povinni jednat v souladu s cíli spolku a nepoškozovat jeho dobré jméno svým chováním nebo jednáním.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="statute-section">
+                        <button class="accordion">Článek 5 - Orgány spolku</button>
+                        <div class="accordion-content">
+                            <h4>Statutární orgán</h4>
+                            <ul>
+                                <li>Statutárním orgánem spolku je výbor spolku, který se skládá z předsedy, místopředsedy a pokladníka.</li>
+                                <li>Členové výboru jsou voleni členskou schůzí na funkční období pět let.</li>
+                                <li>Každý člen výboru je oprávněn jednat jménem spolku samostatně.</li>
+                                <li>Výbor rozhoduje o všech záležitostech spolku, které nespadají do působnosti členské schůze.</li>
+                            </ul>
+                            
+                            <h4>Výbor spolku</h4>
+                            <ol>
+                                <li><strong>Složení výboru:</strong>
+                                    <ul>
+                                        <li>Výbor spolku je kolektivní statutární orgán, který se skládá z:
+                                            <ul>
+                                                <li>Předsedy,</li>
+                                                <li>Místopředsedy,</li>
+                                                <li>Pokladníka</li>
+                                            </ul>
+                                        </li>
+                                        <li>Funkční období členů výboru je 5 let.</li>
+                                    </ul>
+                                </li>
+                                <li>Členové výboru jsou volení členskou schůzí na jedno funkční období (5 let).</li>
+                                <li><strong>Funkce jednotlivých členů výboru jsou:</strong>
+                                    <ul>
+                                        <li>Předseda: Svolává a řídí členské schůze, zastupuje spolek navenek, podepisuje jménem spolku důležité dokumenty.</li>
+                                        <li>Místopředseda: Zastupuje předsedu v jeho nepřítomnosti a pomáhá mu s plněním jeho úkolů.</li>
+                                        <li>Pokladník: Spravuje finance spolku, vede evidenci příjmů a výdajů, připravuje zprávy o hospodaření, může na základě dohody s výborem delegovat některé své povinnosti na jiného člena výboru, přičemž za celkové hospodaření spolku nadále zůstává odpovědný.</li>
+                                    </ul>
+                                </li>
+                                <li><strong>Pravomoci výboru:</strong>
+                                    <ul>
+                                        <li>Výbor spolku je odpovědný za řízení činnosti spolku, rozhodování o jeho záležitostech a zastupování spolku navenek.</li>
+                                        <li>Výbor rozhoduje o:
+                                            <ul>
+                                                <li>Realizaci aktivit a projektů spolku,</li>
+                                                <li>Hospodaření spolku včetně rozdělování finančních prostředků,</li>
+                                                <li>Přijímání nových členů.</li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li><strong>Jednání jménem spolku:</strong>
+                                    <ul>
+                                        <li>Každý člen výboru je oprávněn jednat jménem spolku samostatně.</li>
+                                        <li>Výbor však může ve stanovách nebo vnitřních předpisech určit, že některé záležitosti vyžadují souhlas více členů výboru (např. finanční transakce nad určitou částku).</li>
+                                    </ul>
+                                </li>
+                                <li><strong>Schůze výboru:</strong>
+                                    <ul>
+                                        <li>Výbor se schází podle potřeby, nejméně však jednou za 6 měsíců.</li>
+                                        <li>Schůzi výboru svolává předseda, nebo v jeho nepřítomnosti místopředseda.</li>
+                                        <li>Výbor je usnášeníschopný, pokud je přítomná nadpoloviční většina jeho členů.</li>
+                                        <li>Rozhodnutí výboru jsou přijímána většinou hlasů přítomných členů. Při rovnosti hlasů rozhoduje hlas předsedy.</li>
+                                    </ul>
+                                </li>
+                                <li><strong>Odpovědnost členů výboru:</strong>
+                                    <ul>
+                                        <li>Členové výboru odpovídají za správné hospodaření spolku a za plnění cílů stanovených členskou schůzí.</li>
+                                        <li>Členové výboru vykonávají své funkce bez nároku na odměnu, pokud členská schůze nerozhodne jinak.</li>
+                                    </ul>
+                                </li>
+                                <li><strong>Odvolání členů výboru:</strong>
+                                    <ul>
+                                        <li>Člen výboru může být odvolán členskou schůzí, pokud závažně poruší stanovy, nebo jedná v rozporu se zájmy spolku.</li>
+                                        <li>Člen výboru může také odstoupit, přičemž tuto skutečnost písemně oznámí členské schůzi.</li>
+                                    </ul>
+                                </li>
+                            </ol>
+                            
+                            <h4>Členská schůze</h4>
+                            <ol>
+                                <li><strong>Postavení členské schůze:</strong>
+                                    <ul>
+                                        <li>Členská schůze je nejvyšším orgánem spolku a rozhoduje o všech zásadních otázkách týkajících se činnosti spolku.</li>
+                                    </ul>
+                                </li>
+                                <li><strong>Pravomoci členské schůze</strong>
+                                    <ul>
+                                        <li>Schvalování stanov a jejich změn.</li>
+                                        <li>Volba a odvolávání členů výboru.</li>
+                                        <li>Schvalování hospodářských výsledků a zpráv o činnosti spolku.</li>
+                                        <li>Rozhodování o výši členských příspěvků.</li>
+                                        <li>Rozhodnutí o zrušení spolku nebo jeho sloučení s jiným spolkem.</li>
+                                    </ul>
+                                </li>
+                                <li><strong>Svolávání členské schůze</strong>
+                                    <ul>
+                                        <li>Členskou schůzi svolává výbor spolku podle potřeby, nejméně však jednou ročně.</li>
+                                        <li>Mimořádnou členskou schůzi lze svolat, pokud o to požádá alespoň jedna třetina členů spolku.</li>
+                                    </ul>
+                                </li>
+                                <li><strong>Usnášeníschopnost</strong>
+                                    <ul>
+                                        <li>Členská schůze je usnášeníschopná, pokud je přítomna nadpoloviční většina členů spolku.</li>
+                                        <li>Rozhodnutí členské schůze se přijímají většinou hlasů přítomných členů, pokud stanovy nestanoví jinak.</li>
+                                    </ul>
+                                </li>
+                                <li><strong>Zápis z jednání</strong>
+                                    <ul>
+                                        <li>O průběhu členské schůze se pořizuje zápis, který podepisuje předseda a zapisovatel. Zápis musí obsahovat přijatá usnesení a výsledky hlasování.</li>
+                                    </ul>
+                                </li>
+                            </ol>
+                        </div>
+                    </div>
+                    <div class="statute-section">
+                        <button class="accordion">Článek 6 - Hospodaření spolku</button>
+                        <div class="accordion-content">
+                            <h4>Zásady hospodaření spolku</h4>
+                            <ul>
+                                <li>Spolek hospodaří s příjmy z členských příspěvků, darů, dotací, sponzorských příspěvků a výnosů z činnosti spolku.</li>
+                                <li>Příspěvky zakladatelů a členů, vložené za účelem pořádání konkrétních akcí, mohou být na základě rozhodnutí členské schůze vráceny z přebytků akce, pokud to umožňuje hospodářský výsledek.</li>
+                                <li>Čistý zisk z akcí pořádaných spolkem bude přednostně využit na vrácení prokazatelných nákladů členů spojených s pořádáním akce, přičemž případný přebytek bude ponechán na účtu spolku pro další činnost.</li>
+                                <li>Hospodaření spolku podléhá schválení členské schůze, která schvaluje roční zprávu o hospodaření.</li>
+                                <li>Přebytky po pokrytí všech nákladů akcí jsou určeny výhradně k financování dalších aktivit spolku.</li>
+                                <li>Spolek není zřízen za účelem zisku, přičemž vrácení vkladů členům odpovídá jejich přímým nákladům na konkrétní akci.</li>
+                                <li>Spolek může vykonávat vedlejší hospodářskou činnost spočívající v pořádání kulturních, společenských a jiných akcí, v rámci nichž může provozovat prodej vstupenek, občerstvení a jiného zboží za účelem podpory své hlavní činnosti. Zisk z této činnosti bude využit výhradně k financování spolkových aktivit, na rozvoj spolku a zlepšení jeho materiálního zázemí, a to vždy v souladu s jeho účelem.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="statute-section">
+                        <button class="accordion">Článek 7 - Závěrečná ustanovení</button>
+                        <div class="accordion-content">
+                            <h4>Zánik spolku</h4>
+                            <ol>
+                                <li>Spolek zaniká
+                                    <ul>
+                                        <li>Rozhodnutím členské schůze o jeho zrušení, přičemž toto rozhodnutí musí být přijato alespoň dvoutřetinovou většinou všech přítomných členů.</li>
+                                        <li>Sloučením s jiným spolkem na základě rozhodnutí členské schůze.</li>
+                                        <li>Rozhodnutím soudu v případech stanovených zákonem.</li>
+                                    </ul>
+                                </li>
+                                <li>Při zániku spolku se provede jeho likvidace, pokud majetek spolku nepřechází na právního nástupce.</li>
+                                <li>Likvidátora jmenuje členská schůze. Likvidátor odpovídá za vypořádání všech závazků spolku a naložení se zbylým majetkem v souladu s účelem spolku.</li>
+                                <li>Zbylý majetek spolku po vypořádání všech závazků bude použit výhradně na neziskové účely, a to:
+                                    <ul>
+                                        <li>Převodem na jiný spolek nebo organizaci s podobným účelem,</li>
+                                        <li>Nebo poskytnutím obci Mackovice pro podporu kulturních aktivit.</li>
+                                    </ul>
+                                </li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
                 <div class="button-container">
-                    <a href="detail-spolku.html" class="button">Detail spolku</a>
+                    <a href="docs/V2 - Stanovy - Mackovská chasa zs.pdf" class="button" target="_blank">Stáhnout PDF verzi stanov</a>
                 </div>
             </div>
         </section>
@@ -53,9 +306,13 @@
                 <div class="contact-grid">
                     <div class="contact-info">
                         <h3>Mackovská chasa z.s.</h3>
-                        <p>Mackovice 23</p>
-                        <p>671 78 Mackovice</p>
-                        <p>Email: <a href="mailto:info@mackovskachasa.cz">info@mackovskachasa.cz</a></p>
+                        <p><i class="fas fa-map-marker-alt"></i> Mackovice 23</p>
+                        <p>671 78 Jiřice u Miroslavi</p>
+                        <p><i class="fas fa-id-card"></i> IČO: 23022612</p>
+                        <p><i class="fas fa-user-tie"></i> Zastupující osoba: Zdeněk Podaný (předseda spolku)</p>
+                        <p><i class="fas fa-envelope"></i> ID datové schránky: ghfvwwd</p>
+                        <p><i class="fas fa-file-alt"></i> <a href="https://or.justice.cz/ias/ui/rejstrik-firma.vysledky?subjektId=1271665&typ=UPLNY" target="_blank" rel="noopener noreferrer">Výpis v rejstříku spolků</a></p>
+                        <p><i class="fas fa-university"></i> Bankovní účet: 6803739359/0800</p>
                     </div>
                     <div class="contact-info">
                         <h3>Obec Mackovice</h3>
@@ -73,7 +330,10 @@
 
     <footer>
         <div class="container">
-            <p>&copy; <span id="year"></span> Mackovská chasa z.s. Všechna práva vyhrazena.</p>
+            <div class="footer-content">
+                <img src="img/mackovskachasa_logo.svg" alt="Logo Mackovská chasa z.s." class="footer-logo">
+                <p>&copy; <span id="year"></span> Mackovská chasa z.s. Všechna práva vyhrazena.</p>
+            </div>
         </div>
     </footer>
 
