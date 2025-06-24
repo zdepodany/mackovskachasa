@@ -1163,4 +1163,34 @@ h1, h2, h3, h4 {
         width: 100%;
         margin-top: 1rem;
     }
+}
+
+.main-sponsor {
+    border: 3px solid var(--primary-color);
+    background: linear-gradient(135deg, #fff7f7 60%, #ffeaea 100%);
+    box-shadow: 0 6px 24px rgba(139,0,0,0.12);
+    position: relative;
+}
+.main-sponsor::before {
+    content: "Hlavní sponzor";
+    position: absolute;
+    top: -1.2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--primary-color);
+    color: #fff;
+    padding: 0.2rem 1rem;
+    border-radius: 12px;
+    font-size: 0.95rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    box-shadow: 0 2px 8px rgba(139,0,0,0.10);
+}
+
+.band-time {
+    color: var(--primary-color);
+    font-weight: 600;
+    font-size: 1.1rem;
+    margin-bottom: 0.7rem;
+    letter-spacing: 0.5px;
 } 
