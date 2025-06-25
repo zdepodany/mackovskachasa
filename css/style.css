@@ -743,9 +743,21 @@ footer {
 
 .sponsors-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
     align-items: center;
+}
+
+@media (max-width: 900px) {
+    .sponsors-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    .sponsors-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 .media-links {
