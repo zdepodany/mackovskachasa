@@ -181,6 +181,7 @@ body {
 
 .section-alt {
     background-color: var(--secondary-color);
+    padding: 3rem 0;
 }
 
 .section h2 {
@@ -194,6 +195,27 @@ body {
 }
 
 .section h2:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: var(--primary-color);
+    border-radius: 2px;
+}
+
+.section-alt h2 {
+    color: var(--primary-color);
+    font-size: 2.2rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    position: relative;
+    padding-bottom: 1rem;
+    letter-spacing: 0.5px;
+}
+.section-alt h2:after {
     content: '';
     position: absolute;
     bottom: 0;
@@ -735,10 +757,65 @@ footer {
     margin-bottom: 1rem;
 }
 
+/* Chasa grid */
 .chasa-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 2rem;
+    margin: 2rem 0;
+}
+
+.chasa-card {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(139,0,0,0.08);
+    padding: 1.7rem 1.2rem;
+    text-align: center;
+    font-size: 1.13rem;
+    font-family: 'Open Sans', sans-serif;
+    color: var(--primary-color);
+    position: relative;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+.chasa-card:hover {
+    transform: translateY(-4px) scale(1.03);
+    box-shadow: 0 6px 24px rgba(139,0,0,0.13);
+}
+.chasa-names {
+    font-weight: 600;
+    font-size: 1.13rem;
+    color: var(--primary-color);
+}
+.chasa-role {
+    font-size: 0.98rem;
+    color: #fff;
+    background: var(--primary-color);
+    border-radius: 8px;
+    padding: 0.3rem 0.8rem;
+    margin-bottom: 0.7rem;
+    display: inline-block;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    box-shadow: 0 2px 8px rgba(139,0,0,0.10);
+}
+.hlavni-starkovy {
+    border: 3px solid var(--primary-color);
+    background: linear-gradient(135deg, #fff7f7 60%, #ffeaea 100%);
+    box-shadow: 0 6px 24px rgba(139,0,0,0.12);
+}
+.hlavni-starkovy .chasa-names {
+    font-size: 1.18rem;
+    color: #6B0000;
+}
+@media (max-width: 600px) {
+    .chasa-grid {
+        grid-template-columns: 1fr;
+        gap: 1.2rem;
+    }
+    .chasa-card {
+        padding: 1.2rem 0.7rem;
+        font-size: 1.05rem;
+    }
 }
 
 .sponsors-grid {
