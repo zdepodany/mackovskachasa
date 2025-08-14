@@ -125,11 +125,13 @@ body {
 }
 
 .hero-content .button-facebook {
-    margin-top: 2rem;
+    margin-top: 0;
     background-color: #1877F2;
     border-color: #1877F2;
     opacity: 0.9;
     transition: all 0.3s ease;
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
 }
 
 .hero-content .button-facebook:hover {
