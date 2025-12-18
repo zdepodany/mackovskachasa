@@ -1,10 +1,11 @@
 :root {
-    --primary-color: #8B0000;  /* tmavě červená - typická pro moravské kroje */
-    --secondary-color: #F5F5DC;  /* béžová - připomíná plátno krojů */
-    --text-color: #333;
+    --primary-color: #A63D3D;  /* sofistikovaná terakota - moderní, ale zachovává teplý tón */
+    --secondary-color: #F8F7F4;  /* jemná neutrální béžová - klidná, moderní */
+    --text-color: #2C2C2C;
     --background-color: #fff;
-    --border-color: rgba(0, 0, 0, 0.1);
-    --hover-color: #6B0000;
+    --border-color: rgba(0, 0, 0, 0.08);
+    --hover-color: #8B2E2E;
+    --text-light: rgba(255, 255, 255, 0.95);
 }
 
 * {
@@ -15,15 +16,23 @@
 
 body {
     font-family: 'Open Sans', sans-serif;
-    line-height: 1.6;
+    line-height: 1.7;
     color: var(--text-color);
-    background-color: #f9f9f9;
+    background-color: #FAFAFA;
+    font-size: 16px;
+    letter-spacing: 0.01em;
 }
 
 .container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 0 1.5rem;
+    }
 }
 
 /* Navigace */
@@ -44,20 +53,26 @@ body {
 
 .navbar h1 {
     color: white;
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     font-family: 'Open Sans', sans-serif;
     font-weight: 600;
-    letter-spacing: 0.5px;
+    letter-spacing: 0.02em;
 }
 
 .navbar h1 a {
     color: white;
     text-decoration: none;
-    transition: color 0.3s;
+    transition: color 0.2s ease;
 }
 
 .navbar h1 a:hover {
-    color: var(--secondary-color);
+    color: rgba(255, 255, 255, 0.85);
+}
+
+.navbar h1 a:focus {
+    outline: 2px solid rgba(255, 255, 255, 0.8);
+    outline-offset: 2px;
+    border-radius: 2px;
 }
 
 .nav-links {
@@ -69,19 +84,25 @@ body {
 .nav-links a {
     color: white;
     text-decoration: none;
-    transition: color 0.3s;
+    transition: color 0.2s ease;
 }
 
 .nav-links a:hover {
-    color: var(--secondary-color);
+    color: rgba(255, 255, 255, 0.85);
+}
+
+.nav-links a:focus {
+    outline: 2px solid rgba(255, 255, 255, 0.8);
+    outline-offset: 2px;
+    border-radius: 2px;
 }
 
 /* Hero sekce */
 .hero {
-    background: linear-gradient(rgba(139, 0, 0, 0.5), rgba(107, 0, 0, 0.5)), url('../img/hody25bg.webp');
+    background: linear-gradient(rgba(166, 61, 61, 0.25), rgba(139, 46, 46, 0.3)), url('../img/hody25bg.webp');
     background-size: cover;
     background-position: center;
-    padding: 8rem 0 6rem 0;
+    padding: 11rem 0 8rem 0;
     min-height: 60vh;
     color: white;
     text-align: center;
@@ -97,13 +118,13 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(135deg, rgba(139, 0, 0, 0.5), rgba(107, 0, 0, 0.5));
+    background: linear-gradient(135deg, rgba(166, 61, 61, 0.25), rgba(139, 46, 46, 0.3));
     z-index: 1;
 }
 
 .hero-content {
     text-align: center;
-    padding: 4rem 0;
+    padding: 4rem 0 3rem 0;
     max-width: 800px;
     margin: 0 auto;
     position: relative;
@@ -112,33 +133,46 @@ body {
 
 .hero-content h1 {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 3.5rem;
-    font-weight: 600;
-    margin-bottom: 1.5rem;
-    color: var(--text-light);
+    font-size: 3rem;
+    font-weight: 400;
+    margin-bottom: 2rem;
+    color: rgba(255, 255, 255, 0.98);
+    letter-spacing: 0.01em;
+    line-height: 1.25;
 }
 
 .hero-content p {
-    font-size: 1.2rem;
-    margin-bottom: 1rem;
-    color: var(--text-light);
+    font-size: 1.1rem;
+    margin-bottom: 2.5rem;
+    color: rgba(255, 255, 255, 0.92);
+    line-height: 1.65;
+    letter-spacing: 0.01em;
+    font-weight: 400;
 }
 
 .hero-content .button-facebook {
     margin-top: 0;
     background-color: #1877F2;
-    border-color: #1877F2;
-    opacity: 0.9;
-    transition: all 0.3s ease;
-    padding: 1rem 2rem;
-    font-size: 1.1rem;
+    border: 1px solid #1877F2;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+    padding: 0.85rem 1.75rem;
+    font-size: 1rem;
+    font-weight: 500;
+    letter-spacing: 0.01em;
+    border-radius: 6px;
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
 }
 
 .hero-content .button-facebook:hover {
     background-color: #166FE5;
     border-color: #166FE5;
-    opacity: 1;
-    transform: translateY(-2px);
+}
+
+.hero-content .button-facebook:focus {
+    outline: 2px solid #1877F2;
+    outline-offset: 2px;
 }
 
 .hero-content .button-facebook i {
@@ -149,51 +183,54 @@ body {
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    padding: 1rem 2rem;
-    background-color: var(--secondary-color);
+    padding: 0.85rem 1.75rem;
+    background-color: rgba(255, 255, 255, 0.95);
     color: var(--primary-color);
     text-decoration: none;
-    border-radius: 4px;
-    font-weight: 600;
-    font-size: 1.1rem;
-    transition: all 0.3s ease;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    border-radius: 6px;
+    font-weight: 500;
+    font-size: 1rem;
+    transition: background-color 0.2s ease, color 0.2s ease;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    letter-spacing: 0.01em;
+    cursor: pointer;
 }
 
 .hero .button-primary i {
-    font-size: 0.9rem;
-    transition: transform 0.3s ease;
+    font-size: 0.85rem;
 }
 
 .hero .button-primary:hover {
     background-color: white;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    color: var(--hover-color);
 }
 
-.hero .button-primary:hover i {
-    transform: translateX(4px);
+.hero .button-primary:focus {
+    outline: 2px solid rgba(255, 255, 255, 0.8);
+    outline-offset: 2px;
 }
 
 /* Sekce */
 .section {
-    padding: 3rem 0;
+    padding: 6rem 0;
     background-color: var(--background-color);
 }
 
 .section-alt {
     background-color: var(--secondary-color);
-    padding: 3rem 0;
+    padding: 6rem 0;
 }
 
 .section h2 {
     color: var(--primary-color);
-    font-size: 2.2rem;
-    margin-bottom: 2rem;
+    font-size: 2.5rem;
+    margin-bottom: 3.5rem;
     text-align: center;
     position: relative;
     padding-bottom: 1rem;
-    letter-spacing: 0.5px;
+    letter-spacing: 0.01em;
+    font-weight: 400;
+    line-height: 1.3;
 }
 
 .section h2:after {
@@ -202,20 +239,23 @@ body {
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
-    width: 80px;
-    height: 3px;
+    width: 40px;
+    height: 1px;
     background: var(--primary-color);
-    border-radius: 2px;
+    border-radius: 1px;
+    opacity: 0.3;
 }
 
 .section-alt h2 {
     color: var(--primary-color);
-    font-size: 2.2rem;
-    margin-bottom: 2rem;
+    font-size: 2.5rem;
+    margin-bottom: 3.5rem;
     text-align: center;
     position: relative;
     padding-bottom: 1rem;
-    letter-spacing: 0.5px;
+    letter-spacing: 0.01em;
+    font-weight: 400;
+    line-height: 1.3;
 }
 .section-alt h2:after {
     content: '';
@@ -223,10 +263,11 @@ body {
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
-    width: 80px;
-    height: 3px;
+    width: 40px;
+    height: 1px;
     background: var(--primary-color);
-    border-radius: 2px;
+    border-radius: 1px;
+    opacity: 0.3;
 }
 
 /* Kontakt */
@@ -238,24 +279,26 @@ body {
 
 .contact-info {
     background: white;
-    padding: 2rem;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    padding: 2.5rem;
+    border-radius: 12px;
+    border: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 .contact-info h3 {
     color: var(--primary-color);
-    font-size: 1.5rem;
-    margin-bottom: 1.5rem;
+    font-size: 1.45rem;
+    margin-bottom: 2.25rem;
     text-align: center;
-    padding-bottom: 0.5rem;
-    border-bottom: 2px solid var(--secondary-color);
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid rgba(166, 61, 61, 0.1);
+    font-weight: 400;
+    letter-spacing: 0.01em;
 }
 
 .contact-details {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: 1.25rem;
 }
 
 .contact-item {
@@ -277,17 +320,25 @@ body {
 }
 
 .contact-item p {
-    margin-bottom: 0.2rem;
+    margin-bottom: 0.3rem;
+    line-height: 1.6;
 }
 
 .contact-info a {
     color: var(--primary-color);
     text-decoration: none;
-    transition: color 0.3s;
+    transition: color 0.2s ease;
 }
 
 .contact-info a:hover {
+    color: var(--hover-color);
     text-decoration: underline;
+}
+
+.contact-info a:focus {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+    border-radius: 2px;
 }
 
 /* Tlačítka */
@@ -298,17 +349,27 @@ body {
 
 .button {
     display: inline-block;
-    padding: 0.8rem 1.5rem;
+    padding: 0.85rem 1.75rem;
     background-color: var(--primary-color);
     color: white;
     text-decoration: none;
-    border-radius: 4px;
-    transition: background-color 0.3s ease;
+    border-radius: 6px;
+    border: none;
+    font-weight: 500;
+    font-size: 1rem;
+    letter-spacing: 0.01em;
+    transition: background-color 0.2s ease;
+    cursor: pointer;
 }
 
 .button:hover {
-    background-color: #6b0000;
+    background-color: var(--hover-color);
     text-decoration: none;
+}
+
+.button:focus {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
 }
 
 .detail-header {
@@ -324,7 +385,7 @@ body {
 footer {
     background-color: var(--primary-color);
     color: white;
-    padding: 2rem 0;
+    padding: 3rem 0;
     text-align: center;
 }
 
@@ -334,18 +395,24 @@ footer {
     background: none;
     border: none;
     cursor: pointer;
-    padding: 0.5rem;
+    padding: 0.75rem;
     position: relative;
-    z-index: 1001;
+    z-index: 1002;
+    width: 44px;
+    height: 44px;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 5px;
 }
 
 .hamburger span {
     display: block;
-    width: 25px;
-    height: 3px;
+    width: 24px;
+    height: 2px;
     background-color: white;
-    margin: 5px 0;
-    transition: all 0.3s ease;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    transform-origin: center;
 }
 
 /* Detail spolku */
@@ -358,11 +425,11 @@ footer {
 
 .committee-member {
     text-align: center;
-    padding: 2rem;
+    padding: 2.5rem;
     background-color: white;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease;
+    border-radius: 12px;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    transition: border-color 0.2s ease;
 }
 
 .member-icon {
@@ -374,12 +441,16 @@ footer {
 .committee-member h4 {
     color: var(--primary-color);
     font-size: 1.2rem;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.01em;
 }
 
 .committee-member p {
-    font-size: 1.1rem;
+    font-size: 1.05rem;
     margin-bottom: 0.5rem;
+    line-height: 1.6;
+    letter-spacing: 0.01em;
 }
 
 .member-contact {
@@ -390,12 +461,18 @@ footer {
 .member-contact a {
     color: var(--primary-color);
     text-decoration: none;
-    transition: color 0.3s;
+    transition: color 0.2s ease;
 }
 
 .member-contact a:hover {
-    color: #6b0000;
+    color: var(--hover-color);
     text-decoration: underline;
+}
+
+.member-contact a:focus {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+    border-radius: 2px;
 }
 
 .member-contact i {
@@ -405,15 +482,19 @@ footer {
 
 .section-divider {
     height: 1px;
-    background-color: #ddd;
-    margin: 3rem 0;
+    background-color: rgba(0, 0, 0, 0.06);
+    margin: 4rem 0;
+    border: none;
 }
 
 .detail-content h3 {
     color: var(--primary-color);
-    font-size: 1.8rem;
-    margin-bottom: 1.5rem;
+    font-size: 1.7rem;
+    margin-bottom: 2.5rem;
     text-align: center;
+    font-weight: 400;
+    letter-spacing: 0.01em;
+    line-height: 1.4;
 }
 
 .committee-description {
@@ -424,7 +505,10 @@ footer {
 }
 
 .committee-description p {
-    margin-bottom: 1rem;
+    margin-bottom: 1.25rem;
+    line-height: 1.7;
+    letter-spacing: 0.01em;
+    font-size: 1.05rem;
 }
 
 /* Responzivní design */
@@ -435,115 +519,332 @@ footer {
     }
 
     .hamburger {
-        display: block;
+        display: flex;
+    }
+
+    /* Backdrop overlay */
+    .nav-links::before {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.5);
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.3s ease, visibility 0.3s ease;
+        z-index: -1;
+    }
+
+    .nav-links.active::before {
+        opacity: 1;
+        visibility: visible;
     }
 
     .nav-links {
         position: fixed;
         top: 0;
         right: -100%;
-        width: 100%;
+        width: 85%;
+        max-width: 320px;
         height: 100vh;
         background-color: var(--primary-color);
         flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        transition: right 0.3s ease;
+        justify-content: flex-start;
+        align-items: stretch;
+        transition: right 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         margin: 0;
-        padding: 4rem 0;
+        padding: 5rem 0 2rem;
+        z-index: 1001;
+        box-shadow: -2px 0 20px rgba(0, 0, 0, 0.15);
+        overflow-y: auto;
     }
 
     .nav-links.active {
         right: 0;
     }
 
-    /* Animace pro hamburger menu */
+    .nav-links li {
+        width: 100%;
+        margin: 0;
+    }
+
+    .nav-links a {
+        display: block;
+        padding: 1.25rem 2rem;
+        font-size: 1.1rem;
+        font-weight: 500;
+        letter-spacing: 0.01em;
+        color: white;
+        text-decoration: none;
+        transition: background-color 0.2s ease, color 0.2s ease;
+        border-left: 3px solid transparent;
+    }
+
+    .nav-links a:hover,
+    .nav-links a:focus {
+        background-color: rgba(255, 255, 255, 0.1);
+        border-left-color: rgba(255, 255, 255, 0.5);
+        color: white;
+    }
+
+    /* Hamburger animation - improved */
     .hamburger.active span:nth-child(1) {
-        transform: rotate(45deg) translate(6px, 6px);
+        transform: rotate(45deg) translateY(7px);
     }
 
     .hamburger.active span:nth-child(2) {
         opacity: 0;
+        transform: scaleX(0);
     }
 
     .hamburger.active span:nth-child(3) {
-        transform: rotate(-45deg) translate(6px, -6px);
+        transform: rotate(-45deg) translateY(-7px);
+    }
+
+    /* Prevent body scroll when menu is open */
+    body.menu-open {
+        overflow: hidden;
     }
 
     .hero {
-        padding: 8rem 2rem 4rem;
+        padding: 8rem 0 5rem;
+        min-height: 50vh;
     }
 
-    .hero h1 {
+    .hero-content {
+        padding: 3rem 0 2rem;
+    }
+
+    .hero-content h1 {
         font-size: 2rem;
+        margin-bottom: 1.5rem;
+        line-height: 1.25;
+    }
+    
+    .hero-content p {
+        font-size: 1rem;
+        margin-bottom: 2rem;
+        line-height: 1.6;
     }
 
-    .section h2 {
-        font-size: 1.8rem;
+    .section,
+    .section-alt {
+        padding: 4rem 0;
+    }
+
+    .section h2,
+    .section-alt h2 {
+        font-size: 1.9rem;
+        margin-bottom: 2.5rem;
+        padding-bottom: 0.75rem;
     }
 
     .date-card,
     .band-card,
     .attraction-card,
     .sponsor-card {
-        padding: 2rem;
+        padding: 2rem 1.5rem;
+    }
+    
+    .contact-info {
+        padding: 2rem 1.5rem;
+    }
+    
+    .committee-member {
+        padding: 2rem 1.5rem;
+    }
+    
+    .committee-grid {
+        gap: 1.75rem;
+    }
+    
+    .contact-grid {
+        gap: 1.75rem;
+    }
+    
+    .detail-content h3 {
+        font-size: 1.5rem;
+        margin-bottom: 2rem;
+    }
+    
+    body {
+        font-size: 15px;
+    }
+    
+    .button,
+    .button-primary,
+    .button-facebook {
+        padding: 0.75rem 1.5rem;
+        font-size: 0.95rem;
+    }
+    
+    .band-link,
+    .sponsor-btn {
+        padding: 0.6rem 1.15rem;
+        font-size: 0.9rem;
+    }
+    
+    .statutes-container {
+        margin: 2rem 0;
+    }
+    
+    .accordion {
+        padding: 1.25rem 1.5rem;
+        font-size: 1.05rem;
+    }
+    
+    .accordion-content.active {
+        padding: 1.75rem 1.5rem;
+    }
+    
+    .accordion-content p,
+    .accordion-content li {
+        line-height: 1.75;
+    }
+    
+    .accordion-content h4 {
+        font-size: 1.15rem;
+        margin-top: 1.75rem;
     }
 }
 
 /* Stanovy */
 .statutes-container {
-    margin: 2rem 0;
+    margin: 3rem 0;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .statute-section {
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
 }
 
 .accordion {
     width: 100%;
-    padding: 1rem;
+    padding: 1.5rem 1.75rem;
     text-align: left;
     background-color: var(--secondary-color);
     border: none;
-    border-radius: 4px;
+    border-radius: 8px;
     cursor: pointer;
     font-size: 1.1rem;
     color: var(--primary-color);
-    transition: background-color 0.3s ease;
+    transition: background-color 0.2s ease;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    letter-spacing: 0.01em;
+    font-weight: 500;
+    position: relative;
+}
+
+.accordion:focus {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
 }
 
 .accordion:after {
     content: '\002B';
-    font-weight: bold;
-    float: right;
-    margin-left: 5px;
+    font-size: 1.5rem;
+    font-weight: 300;
+    line-height: 1;
+    color: var(--primary-color);
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    flex-shrink: 0;
+    margin-left: 1rem;
 }
 
 .accordion.active:after {
     content: '\2212';
+    transform: rotate(180deg);
 }
 
 .accordion:hover {
-    background-color: #e6e6c8;
+    background-color: rgba(166, 61, 61, 0.05);
+}
+
+.accordion.active {
+    background-color: rgba(166, 61, 61, 0.08);
+    border-radius: 8px 8px 0 0;
 }
 
 .accordion-content {
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.3s ease-out;
+    transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1), padding 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     background-color: white;
-    padding: 0 1rem;
+    padding: 0 1.75rem;
 }
 
 .accordion-content.active {
-    max-height: 500px;
-    padding: 1rem;
-    border: 1px solid var(--secondary-color);
+    max-height: 2000px;
+    padding: 2rem 1.75rem;
+    border: 1px solid rgba(166, 61, 61, 0.1);
     border-top: none;
-    border-radius: 0 0 4px 4px;
+    border-radius: 0 0 8px 8px;
+}
+
+/* Typography inside accordion content */
+.accordion-content p {
+    line-height: 1.8;
+    margin-bottom: 1.25rem;
+    color: var(--text-color);
+    font-size: 1rem;
+    max-width: none;
+}
+
+.accordion-content p:last-child {
+    margin-bottom: 0;
+}
+
+.accordion-content h4 {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: var(--primary-color);
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    letter-spacing: 0.01em;
+    line-height: 1.4;
+}
+
+.accordion-content h4:first-child {
+    margin-top: 0;
+}
+
+.accordion-content ul,
+.accordion-content ol {
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+    padding-left: 1.75rem;
+    color: var(--text-color);
+}
+
+.accordion-content ul:last-child,
+.accordion-content ol:last-child {
+    margin-bottom: 0;
+}
+
+.accordion-content li {
+    margin-bottom: 0.75rem;
+    line-height: 1.8;
+}
+
+.accordion-content li:last-child {
+    margin-bottom: 0;
+}
+
+.accordion-content ul ul,
+.accordion-content ol ol {
+    margin-top: 0.75rem;
+    margin-bottom: 0.75rem;
+}
+
+.accordion-content strong {
+    font-weight: 600;
+    color: var(--text-color);
 }
 
 .button-container {
@@ -569,11 +870,11 @@ footer {
 .hero-logo {
     height: 180px;
     width: auto;
-    margin-bottom: 1.5rem;
-    background-color: var(--secondary-color);
+    margin-bottom: 2rem;
+    background-color: rgba(255, 255, 255, 0.15);
     border-radius: 50%;
     padding: 1.5rem;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    backdrop-filter: blur(10px);
 }
 
 .footer-content {
@@ -599,12 +900,18 @@ footer {
 .footer-credit a {
     color: white;
     text-decoration: none;
-    transition: color 0.3s;
+    transition: color 0.2s ease;
 }
 
 .footer-credit a:hover {
-    color: var(--secondary-color);
+    color: rgba(255, 255, 255, 0.85);
     text-decoration: underline;
+}
+
+.footer-credit a:focus {
+    outline: 2px solid rgba(255, 255, 255, 0.8);
+    outline-offset: 2px;
+    border-radius: 2px;
 }
 
 /* Responzivní design pro logo */
@@ -645,12 +952,13 @@ footer {
     background: white;
     padding: 2.5rem;
     border-radius: 12px;
-    border: 1px solid var(--border-color);
+    border: 1px solid rgba(0, 0, 0, 0.05);
     height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
+    transition: border-color 0.2s ease;
 }
 
 .attraction-card i {
@@ -659,15 +967,6 @@ footer {
     margin-bottom: 1.5rem;
 }
 
-.band-link {
-    display: inline-block;
-    margin-top: 1rem;
-    padding: 0.5rem 1rem;
-    background: var(--primary-color);
-    color: white;
-    text-decoration: none;
-    border-radius: 4px;
-}
 
 .date-card h3,
 .band-card h4,
@@ -675,11 +974,12 @@ footer {
 .sponsor-card h4 {
     color: var(--primary-color);
     margin-bottom: 1.5rem;
-    font-size: 1.4rem;
-    font-weight: 600;
+    font-size: 1.35rem;
+    font-weight: 500;
     position: relative;
     padding-bottom: 0.5rem;
-    letter-spacing: 0.5px;
+    letter-spacing: 0.01em;
+    line-height: 1.4;
 }
 
 .date-card p,
@@ -688,34 +988,37 @@ footer {
 .sponsor-card p {
     color: var(--text-color);
     margin-bottom: 1rem;
-    line-height: 1.6;
-    font-size: 1.1rem;
+    line-height: 1.7;
+    font-size: 1.05rem;
+    letter-spacing: 0.01em;
 }
 
 .date-card .date {
-    font-size: 1.8rem;
-    font-weight: 600;
+    font-size: 1.75rem;
+    font-weight: 500;
     color: var(--primary-color);
     margin-bottom: 0.5rem;
-    letter-spacing: 0.5px;
+    letter-spacing: 0.01em;
+    line-height: 1.3;
 }
 
 .date-card .time {
-    font-size: 1.2rem;
-    color: #666;
+    font-size: 1.1rem;
+    color: #5A5A5A;
     margin-bottom: 1rem;
+    letter-spacing: 0.01em;
 }
 
 .hody-program {
-    margin-bottom: 3rem;
+    margin-bottom: 3.5rem;
 }
 
 .program-day {
     background: white;
     padding: 2.5rem;
     border-radius: 12px;
-    border: 1px solid var(--border-color);
-    margin: 2rem 0;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    margin: 2.5rem 0;
 }
 
 .program-day h4 {
@@ -769,54 +1072,77 @@ footer {
 
 .chasa-card {
     background: white;
-    border-radius: 10px;
-    box-shadow: 0 2px 8px rgba(139,0,0,0.08);
-    padding: 1.7rem 1.2rem;
+    border-radius: 12px;
+    border: 1px solid rgba(166, 61, 61, 0.08);
+    padding: 1.75rem 1.25rem;
     text-align: center;
-    font-size: 1.13rem;
+    font-size: 1.1rem;
     font-family: 'Open Sans', sans-serif;
     color: var(--primary-color);
     position: relative;
-    transition: transform 0.2s, box-shadow 0.2s;
+    transition: border-color 0.2s ease;
+    letter-spacing: 0.01em;
 }
 .chasa-card:hover {
-    transform: translateY(-4px) scale(1.03);
-    box-shadow: 0 6px 24px rgba(139,0,0,0.13);
+    border-color: rgba(166, 61, 61, 0.15);
 }
 .chasa-names {
-    font-weight: 600;
-    font-size: 1.13rem;
+    font-weight: 500;
+    font-size: 1.1rem;
     color: var(--primary-color);
+    line-height: 1.5;
+    letter-spacing: 0.01em;
 }
 .chasa-role {
-    font-size: 0.98rem;
+    font-size: 0.95rem;
     color: #fff;
     background: var(--primary-color);
     border-radius: 8px;
-    padding: 0.3rem 0.8rem;
-    margin-bottom: 0.7rem;
+    padding: 0.35rem 0.85rem;
+    margin-bottom: 0.75rem;
     display: inline-block;
-    font-weight: 700;
-    letter-spacing: 0.5px;
-    box-shadow: 0 2px 8px rgba(139,0,0,0.10);
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    box-shadow: 0 2px 8px rgba(166, 61, 61, 0.15);
 }
 .hlavni-starkovy {
-    border: 3px solid var(--primary-color);
-    background: linear-gradient(135deg, #fff7f7 60%, #ffeaea 100%);
-    box-shadow: 0 6px 24px rgba(139,0,0,0.12);
+    border: 1px solid var(--primary-color);
+    background: rgba(166, 61, 61, 0.03);
 }
 .hlavni-starkovy .chasa-names {
-    font-size: 1.18rem;
-    color: #6B0000;
+    font-size: 1.15rem;
+    color: var(--hover-color);
 }
+/* Kompaktnější zobrazení pro jednotlivce */
+.chasa-grid-compact {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1.2rem;
+}
+
+.chasa-card-compact {
+    padding: 1.2rem 0.8rem;
+    font-size: 1rem;
+}
+
+.chasa-card-compact .chasa-names {
+    font-size: 1rem;
+}
+
 @media (max-width: 600px) {
     .chasa-grid {
         grid-template-columns: 1fr;
-        gap: 1.2rem;
+        gap: 1.5rem;
     }
     .chasa-card {
-        padding: 1.2rem 0.7rem;
+        padding: 1.5rem 1rem;
         font-size: 1.05rem;
+    }
+    .chasa-grid-compact {
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+        gap: 1.2rem;
+    }
+    .chasa-card-compact {
+        padding: 1.2rem 0.9rem;
     }
 }
 
@@ -850,13 +1176,24 @@ footer {
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    padding: 1rem 2rem;
+    padding: 1rem 1.75rem;
     background: white;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    border-radius: 12px;
+    border: 1px solid rgba(0, 0, 0, 0.05);
     text-decoration: none;
     color: var(--primary-color);
-    transition: transform 0.3s ease;
+    transition: border-color 0.2s ease, color 0.2s ease;
+    letter-spacing: 0.01em;
+}
+
+.media-link:hover {
+    border-color: rgba(166, 61, 61, 0.15);
+    color: var(--hover-color);
+}
+
+.media-link:focus {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
 }
 
 .media-link i {
@@ -866,15 +1203,29 @@ footer {
 @media (max-width: 768px) {
     .hody-dates {
         grid-template-columns: 1fr;
+        gap: 1.75rem;
     }
     
     .band-grid {
         grid-template-columns: 1fr;
+        gap: 1.75rem;
+    }
+    
+    .attractions-grid {
+        gap: 1.75rem;
     }
     
     .media-links {
         flex-direction: column;
         align-items: center;
+        gap: 1.25rem;
+    }
+    
+    .media-link {
+        width: 100%;
+        max-width: 300px;
+        justify-content: center;
+        padding: 1rem 1.5rem;
     }
 }
 
@@ -888,10 +1239,11 @@ footer {
 
 .attraction-card {
     background: white;
-    padding: 2rem;
-    border-radius: 8px;
+    padding: 2.5rem;
+    border-radius: 12px;
+    border: 1px solid rgba(0, 0, 0, 0.05);
     text-align: center;
-    transition: transform 0.3s ease;
+    transition: border-color 0.2s ease;
 }
 
 .attraction-card i {
@@ -908,10 +1260,11 @@ footer {
 /* Kapely */
 .band-card {
     background: white;
-    padding: 2rem;
-    border-radius: 8px;
+    padding: 2.5rem;
+    border-radius: 12px;
+    border: 1px solid rgba(0, 0, 0, 0.05);
     text-align: center;
-    transition: transform 0.3s ease;
+    transition: border-color 0.2s ease;
 }
 
 .band-card h4 {
@@ -922,25 +1275,36 @@ footer {
 .band-link {
     display: inline-block;
     margin-top: 1rem;
-    padding: 0.5rem 1rem;
+    padding: 0.65rem 1.25rem;
     background: var(--primary-color);
     color: white;
     text-decoration: none;
-    border-radius: 4px;
+    border-radius: 6px;
+    font-weight: 500;
+    font-size: 0.95rem;
+    letter-spacing: 0.01em;
+    transition: background-color 0.2s ease;
+    cursor: pointer;
 }
 
 .band-link:hover {
-    background: var(--primary-color);
+    background: var(--hover-color);
     text-decoration: none;
+}
+
+.band-link:focus {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
 }
 
 /* Sponzoři */
 .sponsor-card {
     background: white;
-    padding: 2rem;
-    border-radius: 8px;
+    padding: 2.5rem;
+    border-radius: 12px;
+    border: 1px solid rgba(0, 0, 0, 0.05);
     text-align: center;
-    transition: transform 0.3s ease;
+    transition: border-color 0.2s ease;
 }
 
 .sponsor-card a {
@@ -953,28 +1317,33 @@ footer {
 }
 
 .sponsor-card p {
-    color: #666;
+    color: #5A5A5A;
+    letter-spacing: 0.01em;
 }
 
 .sponsor-btn {
     display: inline-block;
     margin-top: 0.7rem;
-    padding: 0.5rem 1.2rem;
+    padding: 0.65rem 1.25rem;
     background: var(--primary-color);
     color: #fff;
-    border-radius: 4px;
-    font-size: 1rem;
-    font-weight: 600;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    font-weight: 500;
     text-decoration: none;
-    transition: background 0.2s, box-shadow 0.2s;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+    transition: background-color 0.2s ease;
+    cursor: pointer;
 }
 
 .sponsor-btn:hover {
-    background: #6B0000;
+    background: var(--hover-color);
     color: #fff;
     text-decoration: none;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.13);
+}
+
+.sponsor-btn:focus {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
 }
 
 /* Program */
@@ -998,7 +1367,7 @@ footer {
     top: 3.5rem;
     bottom: -2rem;
     width: 2px;
-    background: rgba(139, 0, 0, 0.1);
+    background: rgba(166, 61, 61, 0.12);
 }
 
 .program-time {
@@ -1022,49 +1391,65 @@ footer {
 
 .program-content {
     background: white;
-    padding: 1.5rem;
+    padding: 1.75rem;
     border-radius: 12px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(0, 0, 0, 0.05);
     flex: 1;
 }
 
 .program-content h3 {
-    font-size: 1.3rem;
-    margin-bottom: 0.5rem;
+    font-size: 1.25rem;
+    margin-bottom: 0.75rem;
     color: var(--primary-color);
+    font-weight: 400;
+    letter-spacing: 0.01em;
+    line-height: 1.4;
 }
 
 .program-content p {
     margin: 0;
     color: var(--text-color);
-    opacity: 0.9;
+    opacity: 0.85;
+    line-height: 1.7;
+    letter-spacing: 0.01em;
 }
 
 @media (max-width: 768px) {
     .program-item {
         flex-direction: column;
-        gap: 1rem;
+        gap: 1.25rem;
+        margin-bottom: 2.5rem;
     }
 
     .program-time {
         flex-direction: row;
         justify-content: flex-start;
         gap: 1rem;
+        font-size: 1.1rem;
+    }
+    
+    .program-content {
+        padding: 1.5rem;
+    }
+    
+    .program-content h3 {
+        font-size: 1.2rem;
+        margin-bottom: 0.75rem;
     }
 
     .program-item:not(:last-child)::after {
-        left: 0.75rem;
-        top: 2.5rem;
+        display: none;
     }
 }
 
 /* Data */
 .date-card {
     background: white;
-    padding: 2rem;
-    border-radius: 8px;
+    padding: 2.5rem;
+    border-radius: 12px;
+    border: 1px solid rgba(0, 0, 0, 0.05);
     text-align: center;
-    transition: transform 0.3s ease;
+    transition: border-color 0.2s ease;
 }
 
 .date-card h3 {
@@ -1103,28 +1488,30 @@ h1, h2, h3, h4 {
 
 .info-content h2 {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 2.6rem;
-    font-weight: 600;
-    margin-bottom: 2rem;
+    font-size: 2.5rem;
+    font-weight: 500;
+    margin-bottom: 2.5rem;
     color: var(--primary-color);
+    letter-spacing: 0.01em;
+    line-height: 1.3;
 }
 
 .info-card {
     display: flex;
     align-items: flex-start;
     gap: 1.5rem;
-    padding: 1.5rem;
+    padding: 2rem;
     background: white;
     border-radius: 12px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    margin-bottom: 1.5rem;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    margin-bottom: 1.75rem;
 }
 
 .info-icon {
     font-size: 2rem;
     color: var(--primary-color);
     padding: 1rem;
-    background: rgba(139, 0, 0, 0.1);
+    background: rgba(166, 61, 61, 0.08);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -1134,14 +1521,19 @@ h1, h2, h3, h4 {
 }
 
 .info-text h3 {
-    font-size: 1.4rem;
-    margin-bottom: 0.5rem;
+    font-size: 1.3rem;
+    margin-bottom: 0.75rem;
     color: var(--primary-color);
+    font-weight: 400;
+    letter-spacing: 0.01em;
+    line-height: 1.4;
 }
 
 .info-text p {
     margin: 0;
     color: var(--text-color);
+    line-height: 1.7;
+    letter-spacing: 0.01em;
 }
 
 .info-date {
@@ -1151,8 +1543,9 @@ h1, h2, h3, h4 {
 }
 
 .info-time {
-    font-size: 1.1rem;
-    opacity: 0.9;
+    font-size: 1.05rem;
+    opacity: 0.85;
+    letter-spacing: 0.01em;
 }
 
 .map-container {
@@ -1165,6 +1558,17 @@ h1, h2, h3, h4 {
 @media (max-width: 768px) {
     .info-grid {
         grid-template-columns: 1fr;
+        gap: 2.5rem;
+    }
+    
+    .info-content h2 {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+    }
+    
+    .info-card {
+        padding: 1.75rem;
+        margin-bottom: 1.5rem;
     }
     
     .map-container {
@@ -1184,11 +1588,11 @@ h1, h2, h3, h4 {
     display: flex;
     align-items: flex-start;
     gap: 2rem;
-    padding: 2rem 2.2rem;
+    padding: 2.25rem 2.5rem;
     background: white;
     border-radius: 14px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.09);
-    margin-bottom: 1.7rem;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    margin-bottom: 2rem;
 }
 
 .program-img {
@@ -1203,26 +1607,28 @@ h1, h2, h3, h4 {
 
 .program-time {
     min-width: 110px;
-    font-weight: 600;
+    font-weight: 500;
     color: var(--primary-color);
     display: flex;
     align-items: center;
     gap: 0.7rem;
-    font-size: 1.18rem;
+    font-size: 1.15rem;
+    letter-spacing: 0.01em;
 }
 
 .program-desc {
     color: var(--text-color);
-    font-size: 1.13rem;
-    line-height: 1.6;
+    font-size: 1.1rem;
+    line-height: 1.7;
+    letter-spacing: 0.01em;
 }
 
 @media (max-width: 600px) {
     .program-list-item {
         flex-direction: column;
         align-items: flex-start;
-        gap: 0.7rem;
-        padding: 1.2rem;
+        gap: 1rem;
+        padding: 1.5rem;
     }
     .program-img {
         width: 100px;
@@ -1233,22 +1639,23 @@ h1, h2, h3, h4 {
         font-size: 1.05rem;
     }
     .program-desc {
-        font-size: 1.03rem;
+        font-size: 1.05rem;
+        line-height: 1.6;
     }
 }
 
 @media (max-width: 600px) {
     .sponsors-grid {
         grid-template-columns: 1fr;
-        gap: 1.5rem;
+        gap: 1.75rem;
     }
     .sponsor-card {
         align-items: center;
         text-align: center;
-        padding: 2rem 1rem;
+        padding: 2rem 1.5rem;
     }
     .sponsor-icon {
-        margin-bottom: 0.7rem;
+        margin-bottom: 0.75rem;
     }
     .sponsor-btn {
         width: 100%;
@@ -1257,9 +1664,8 @@ h1, h2, h3, h4 {
 }
 
 .main-sponsor {
-    border: 3px solid var(--primary-color);
-    background: linear-gradient(135deg, #fff7f7 60%, #ffeaea 100%);
-    box-shadow: 0 6px 24px rgba(139,0,0,0.12);
+    border: 1px solid var(--primary-color);
+    background: rgba(166, 61, 61, 0.03);
     position: relative;
 }
 .main-sponsor::before {
@@ -1270,18 +1676,18 @@ h1, h2, h3, h4 {
     transform: translateX(-50%);
     background: var(--primary-color);
     color: #fff;
-    padding: 0.2rem 1rem;
+    padding: 0.25rem 1rem;
     border-radius: 12px;
-    font-size: 0.95rem;
-    font-weight: 700;
-    letter-spacing: 0.5px;
-    box-shadow: 0 2px 8px rgba(139,0,0,0.10);
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    box-shadow: 0 2px 8px rgba(166, 61, 61, 0.15);
 }
 
 .band-time {
     color: var(--primary-color);
-    font-weight: 600;
-    font-size: 1.1rem;
-    margin-bottom: 0.7rem;
-    letter-spacing: 0.5px;
+    font-weight: 500;
+    font-size: 1.05rem;
+    margin-bottom: 0.75rem;
+    letter-spacing: 0.02em;
 } 
