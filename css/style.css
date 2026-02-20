@@ -899,13 +899,15 @@ footer {
 
 .footer-credit a {
     color: white;
-    text-decoration: none;
-    transition: color 0.2s ease;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    font-weight: 500;
+    transition: color 0.2s ease, opacity 0.2s ease;
 }
 
 .footer-credit a:hover {
-    color: rgba(255, 255, 255, 0.85);
-    text-decoration: underline;
+    color: rgba(255, 255, 255, 1);
+    opacity: 1;
 }
 
 .footer-credit a:focus {
