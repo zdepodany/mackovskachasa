@@ -1,0 +1,1435 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Krojované hody Mackovice 2026 — Mackovská chasa z. s.</title>
+  <meta name="description" content="Krojované hody Mackovice 2026 — 25. července 2026, Společenský areál u fotbalového hřiště Mackovice. Program, kapely, chasa a sponzoři.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+
+  <style>
+    /* ============================================================
+       HODY 2026 — Page-specific styles
+       ============================================================ */
+
+    /* === SUBPAGE HERO === */
+    .hody-hero {
+      position: relative;
+      min-height: 92dvh;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      overflow: hidden;
+    }
+
+    .hody-hero-bg {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+    }
+    .hody-hero-bg img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      object-position: center 30%;
+    }
+    .hody-hero-bg::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(to top, rgba(26, 11, 6, 0.92) 0%, rgba(26, 11, 6, 0.55) 50%, rgba(26, 11, 6, 0.2) 100%);
+    }
+
+    .hody-hero-content {
+      position: relative;
+      z-index: 1;
+      padding-bottom: clamp(3.5rem, 7vw, 6rem);
+      padding-inline: clamp(1.25rem, 5vw, 4rem);
+      max-width: 1320px;
+      margin-inline: auto;
+      width: 100%;
+    }
+
+    .hody-hero-back {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 2;
+      padding: 1.5rem clamp(1.25rem, 5vw, 4rem) 0;
+      max-width: 1320px;
+      margin-inline: auto;
+    }
+
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.8rem;
+      font-weight: 400;
+      letter-spacing: 0.06em;
+      color: rgba(253, 250, 244, 0.55);
+      transition: color 0.2s;
+    }
+    .back-link:hover { color: rgba(253, 250, 244, 0.9); }
+    .back-link svg { flex-shrink: 0; }
+
+    .hody-hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: var(--font-body);
+      font-size: 0.68rem;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1.25rem;
+    }
+
+    .hody-hero-title {
+      font-family: var(--font-display);
+      font-size: clamp(3.5rem, 9vw, 8.5rem);
+      font-weight: 300;
+      line-height: 0.92;
+      letter-spacing: -0.03em;
+      color: var(--bg);
+      margin-bottom: 2rem;
+    }
+    .hody-hero-title em {
+      font-style: italic;
+      color: var(--gold);
+      display: block;
+    }
+
+    .hody-hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 1.5rem 3rem;
+    }
+
+    .hody-hero-date-block {
+      display: flex;
+      align-items: baseline;
+      gap: 0.625rem;
+    }
+    .hody-hero-day {
+      font-family: var(--font-display);
+      font-size: 3.5rem;
+      font-weight: 300;
+      line-height: 1;
+      color: var(--bg);
+      letter-spacing: -0.03em;
+    }
+    .hody-hero-monthyear {
+      font-size: 1rem;
+      font-weight: 300;
+      color: rgba(253, 250, 244, 0.5);
+      letter-spacing: 0.04em;
+    }
+
+    .hody-hero-divider {
+      width: 1px;
+      height: 2.5rem;
+      background: rgba(253, 250, 244, 0.2);
+    }
+
+    .hody-hero-location {
+      font-size: 0.9375rem;
+      font-weight: 300;
+      color: rgba(253, 250, 244, 0.6);
+      line-height: 1.5;
+      max-width: 26ch;
+    }
+    .hody-hero-location strong {
+      display: block;
+      font-weight: 400;
+      color: rgba(253, 250, 244, 0.85);
+      margin-bottom: 0.2rem;
+    }
+
+    .hody-hero-actions {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-top: 2.5rem;
+    }
+
+    .btn-fb {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      background: rgba(253, 250, 244, 0.1);
+      border: 1px solid rgba(253, 250, 244, 0.2);
+      color: var(--bg);
+      font-size: 0.875rem;
+      font-weight: 400;
+      padding: 0.7rem 1.25rem;
+      border-radius: var(--r-pill);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      transition: background 0.2s, border-color 0.2s;
+    }
+    .btn-fb:hover {
+      background: rgba(253, 250, 244, 0.16);
+      border-color: rgba(253, 250, 244, 0.35);
+    }
+
+    /* === UPCOMING / INFO STRIP === */
+    .section-info {
+      background: var(--bg-warm);
+      padding-block: clamp(3rem, 6vw, 5rem);
+    }
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0;
+      border: 1px solid var(--accent-border);
+      border-radius: var(--r-card);
+      overflow: hidden;
+    }
+
+    .info-cell {
+      padding: clamp(1.5rem, 3vw, 2.5rem);
+      border-right: 1px solid var(--accent-border);
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .info-cell:last-child { border-right: none; }
+
+    .info-cell-label {
+      font-size: 0.65rem;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+    .info-cell-value {
+      font-family: var(--font-display);
+      font-size: clamp(1.25rem, 2.5vw, 1.75rem);
+      font-weight: 400;
+      color: var(--text);
+      line-height: 1.25;
+    }
+    .info-cell-sub {
+      font-size: 0.8125rem;
+      color: var(--text-muted);
+      margin-top: 0.25rem;
+    }
+    .info-cell-tba {
+      display: inline-block;
+      font-size: 0.65rem;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--text-light);
+      background: var(--accent-subtle);
+      border-radius: var(--r-pill);
+      padding: 0.25rem 0.6rem;
+      margin-top: 0.25rem;
+      width: fit-content;
+    }
+
+    /* === PROGRAM === */
+    .section-program {
+      background: var(--bg);
+      padding-block: clamp(4rem, 8vw, 7rem);
+    }
+
+    .program-layout {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: clamp(3rem, 6vw, 7rem);
+      align-items: start;
+    }
+
+    .program-list {
+      display: flex;
+      flex-direction: column;
+      border-top: 1px solid var(--accent-border);
+    }
+
+    .program-item {
+      display: grid;
+      grid-template-columns: 5.5rem 1fr;
+      gap: 1.5rem;
+      align-items: baseline;
+      padding: 1.125rem 0;
+      border-bottom: 1px solid var(--accent-border);
+    }
+
+    .program-time {
+      font-family: var(--font-display);
+      font-size: 1.125rem;
+      font-weight: 400;
+      color: var(--accent);
+      letter-spacing: 0.02em;
+    }
+
+    .program-event {
+      font-size: 0.9375rem;
+      color: var(--text);
+      line-height: 1.55;
+    }
+    .program-event-note {
+      display: block;
+      font-size: 0.8125rem;
+      color: var(--text-muted);
+      margin-top: 0.2rem;
+    }
+
+    .program-placeholder {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      padding: 4rem 2rem;
+      border: 1px dashed var(--accent-border);
+      border-radius: var(--r-card);
+      text-align: center;
+    }
+    .program-placeholder-icon {
+      width: 44px; height: 44px;
+      color: var(--accent);
+      opacity: 0.35;
+    }
+    .program-placeholder p {
+      font-size: 0.9rem;
+      color: var(--text-light);
+      font-style: italic;
+    }
+
+    /* === KAPELY === */
+    .section-kapely {
+      background: var(--bg-dark);
+      padding-block: clamp(4rem, 8vw, 7rem);
+      position: relative;
+      overflow: hidden;
+    }
+    .section-kapely::before {
+      content: '';
+      position: absolute;
+      top: -80px; right: -80px;
+      width: 420px; height: 420px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(196, 144, 42, 0.1) 0%, transparent 65%);
+      pointer-events: none;
+    }
+    .section-kapely .eyebrow { color: var(--gold); }
+    .section-kapely .section-title { color: var(--bg); }
+
+    .kapely-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+      margin-top: clamp(2rem, 4vw, 3.5rem);
+    }
+
+    .kapela-card {
+      border-radius: var(--r-card);
+      background: rgba(253, 250, 244, 0.04);
+      border: 1px solid var(--cream-border);
+      padding: 0.3125rem;
+      transition: border-color 0.25s;
+    }
+    .kapela-card:hover { border-color: var(--gold-border); }
+
+    .kapela-card-inner {
+      border-radius: var(--r-card-inner);
+      padding: clamp(1.5rem, 2.5vw, 2.25rem);
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+      min-height: 200px;
+    }
+
+    .kapela-number {
+      font-family: var(--font-display);
+      font-size: 3rem;
+      font-weight: 300;
+      line-height: 1;
+      color: rgba(253, 250, 244, 0.06);
+      letter-spacing: -0.04em;
+      margin-bottom: -0.5rem;
+    }
+
+    .kapela-time {
+      display: inline-block;
+      font-size: 0.65rem;
+      font-weight: 500;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--gold);
+      border: 1px solid var(--gold-border);
+      border-radius: var(--r-pill);
+      padding: 0.28rem 0.7rem;
+      width: fit-content;
+    }
+    .kapela-time--tba {
+      color: rgba(253, 250, 244, 0.3);
+      border-color: rgba(253, 250, 244, 0.12);
+    }
+
+    .kapela-name {
+      font-family: var(--font-display);
+      font-size: clamp(1.375rem, 2.5vw, 1.875rem);
+      font-weight: 400;
+      color: var(--bg);
+      line-height: 1.2;
+      letter-spacing: -0.01em;
+      margin-top: auto;
+    }
+
+    .kapela-desc {
+      font-size: 0.8125rem;
+      color: rgba(253, 250, 244, 0.4);
+      line-height: 1.6;
+    }
+
+    /* === CHASA === */
+    .section-chasa {
+      background: var(--bg);
+      padding-block: clamp(4rem, 8vw, 7rem);
+    }
+
+    .chasa-intro {
+      display: grid;
+      grid-template-columns: 1fr 1.4fr;
+      gap: clamp(3rem, 6vw, 8rem);
+      align-items: start;
+      margin-bottom: clamp(3.5rem, 6vw, 6rem);
+    }
+
+    /* Stárek + stárka — featured pair with photos */
+    .starka-pair {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.25rem;
+      margin-bottom: clamp(3rem, 5vw, 5rem);
+    }
+
+    .starka-card {
+      border-radius: var(--r-card);
+      background: var(--accent-subtle);
+      border: 1px solid var(--accent-border);
+      padding: 0.3125rem;
+      transition: border-color 0.25s;
+    }
+    .starka-card:hover { border-color: rgba(139, 26, 46, 0.35); }
+
+    .starka-card-inner {
+      border-radius: var(--r-card-inner);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .starka-photo {
+      aspect-ratio: 3 / 4;
+      overflow: hidden;
+      background: var(--bg-warm);
+    }
+    .starka-photo img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      transition: transform 0.55s var(--ease-out);
+    }
+    .starka-card:hover .starka-photo img { transform: scale(1.04); }
+
+    .starka-info {
+      padding: 1.25rem 1.5rem;
+      background: var(--bg);
+      display: flex;
+      flex-direction: column;
+      gap: 0.2rem;
+    }
+    .starka-role {
+      font-size: 0.65rem;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+    .starka-name {
+      font-family: var(--font-display);
+      font-size: 1.375rem;
+      font-weight: 500;
+      color: var(--text);
+      line-height: 1.2;
+    }
+
+    /* Velká chasa pairs */
+    .chasa-group-header {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding-bottom: 0.875rem;
+      border-bottom: 1px solid var(--accent-border);
+      margin-bottom: 1.75rem;
+    }
+    .chasa-group-title {
+      font-size: 0.68rem;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+    .chasa-group-count {
+      font-size: 0.72rem;
+      color: var(--text-light);
+      margin-left: auto;
+    }
+
+    .velka-chasa-pairs {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      margin-bottom: clamp(3rem, 5vw, 5rem);
+    }
+
+    .par {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      align-items: center;
+      gap: 1rem;
+      padding: 0.875rem 0;
+      border-bottom: 1px solid rgba(139, 26, 46, 0.07);
+      transition: background 0.18s;
+    }
+    .par:first-child { border-top: 1px solid rgba(139, 26, 46, 0.07); }
+    .par:hover { background: var(--accent-subtle); margin-inline: -1rem; padding-inline: 1rem; border-radius: 0.5rem; border-color: transparent; }
+
+    .par-clen {
+      font-family: var(--font-display);
+      font-size: 1.0625rem;
+      font-weight: 400;
+      color: var(--text);
+      line-height: 1.3;
+    }
+    .par-clen--sohaj { text-align: left; }
+    .par-clen--devcica { text-align: right; color: var(--accent); }
+
+    .par-separator {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      width: 2rem;
+    }
+    .par-separator svg {
+      width: 16px; height: 16px;
+      color: var(--gold);
+      opacity: 0.6;
+    }
+
+    /* Malá chasa — text list */
+    .mala-chasa-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 0.5rem 2rem;
+    }
+
+    .mala-chasa-clen {
+      font-family: var(--font-display);
+      font-size: 1rem;
+      font-weight: 400;
+      color: var(--text-muted);
+      padding: 0.375rem 0;
+      border-bottom: 1px solid rgba(139, 26, 46, 0.06);
+      line-height: 1.4;
+    }
+
+    /* === STÁNKY === */
+    .section-stanky {
+      background: var(--bg-warm);
+      padding-block: clamp(4rem, 8vw, 7rem);
+    }
+
+    .stanky-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-top: clamp(2rem, 4vw, 3.5rem);
+    }
+
+    .stanek-card {
+      border-radius: var(--r-card);
+      background: var(--bg);
+      border: 1px solid var(--accent-border);
+      padding: 0.3125rem;
+      display: flex;
+      flex-direction: column;
+      text-decoration: none;
+      transition: border-color 0.28s cubic-bezier(0.32, 0.72, 0, 1), box-shadow 0.28s cubic-bezier(0.32, 0.72, 0, 1);
+    }
+    .stanek-card:hover {
+      border-color: rgba(139, 26, 46, 0.28);
+      box-shadow: 0 10px 40px -10px rgba(24, 16, 10, 0.1);
+    }
+    .stanek-card--vino {
+      border-color: var(--gold-border);
+      background: #faf7ef;
+    }
+    .stanek-card--vino:hover {
+      border-color: rgba(196, 144, 42, 0.5);
+    }
+
+    .stanek-card-inner {
+      border-radius: var(--r-card-inner);
+      background: var(--bg);
+      padding: clamp(1.5rem, 2.5vw, 2.25rem);
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      flex: 1;
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.85);
+    }
+    .stanek-card--vino .stanek-card-inner {
+      background: #faf7ef;
+    }
+
+    .stanek-card-top {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .stanek-hours {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.65rem;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
+      border: 1px solid var(--accent-border);
+      border-radius: var(--r-pill);
+      padding: 0.3rem 0.7rem;
+      width: fit-content;
+      flex-shrink: 0;
+    }
+    .stanek-card--vino .stanek-hours {
+      color: var(--gold);
+      border-color: var(--gold-border);
+    }
+
+    .stanek-name {
+      font-family: var(--font-display);
+      font-size: clamp(1.375rem, 2.2vw, 1.875rem);
+      font-weight: 500;
+      color: var(--text);
+      line-height: 1.2;
+      letter-spacing: -0.015em;
+      margin-top: 0.25rem;
+    }
+
+    .stanek-items {
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      line-height: 1.75;
+      flex: 1;
+    }
+
+    .stanek-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+      padding-top: 1.125rem;
+      border-top: 1px solid var(--accent-border);
+      margin-top: 0.5rem;
+    }
+    .stanek-card--vino .stanek-footer {
+      border-top-color: rgba(196, 144, 42, 0.15);
+    }
+
+    .stanek-payment {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.68rem;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      border-radius: var(--r-pill);
+      padding: 0.28rem 0.7rem;
+    }
+    .stanek-payment--card {
+      color: #2a7a4f;
+      background: rgba(42, 122, 79, 0.08);
+      border: 1px solid rgba(42, 122, 79, 0.22);
+    }
+    .stanek-payment--cash {
+      color: var(--text-light);
+      background: var(--accent-subtle);
+      border: 1px solid var(--accent-border);
+    }
+    .stanek-payment svg { flex-shrink: 0; }
+
+    .stanek-web {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.75rem;
+      font-weight: 400;
+      color: var(--gold);
+      letter-spacing: 0.02em;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .stanek-web:hover { color: var(--text); }
+    .stanek-web svg { flex-shrink: 0; opacity: 0.7; }
+
+    /* === SPONZOŘI === */
+    .section-sponzori {
+      background: var(--bg-warm);
+      padding-block: clamp(4rem, 8vw, 7rem);
+    }
+
+    .sponzori-header {
+      margin-bottom: clamp(2.5rem, 5vw, 4rem);
+    }
+
+    .sponzori-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 1rem;
+    }
+
+    .sponzor-card {
+      border-radius: var(--r-card);
+      background: var(--bg);
+      border: 1px solid var(--accent-border);
+      padding: 0.25rem;
+      text-decoration: none;
+      transition: border-color 0.22s, box-shadow 0.22s;
+      display: block;
+    }
+    .sponzor-card:hover {
+      border-color: rgba(139, 26, 46, 0.3);
+      box-shadow: 0 8px 32px -8px rgba(24, 16, 10, 0.1);
+    }
+
+    .sponzor-card-inner {
+      border-radius: var(--r-card-inner);
+      background: var(--bg);
+      padding: 1.75rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.875rem;
+      min-height: 130px;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.8);
+    }
+
+    .sponzor-name {
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+      font-weight: 500;
+      color: var(--text);
+      line-height: 1.25;
+    }
+    .sponzor-url {
+      font-size: 0.75rem;
+      color: var(--accent);
+      letter-spacing: 0.03em;
+      margin-top: auto;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+    .sponzor-url svg { flex-shrink: 0; opacity: 0.7; }
+
+    .sponzori-note {
+      margin-top: 2.5rem;
+      font-size: 0.875rem;
+      color: var(--text-light);
+      font-style: italic;
+    }
+
+    /* === MÍSTO KONÁNÍ — MAPA === */
+    .section-mapa {
+      background: var(--bg);
+      padding-block: clamp(4rem, 8vw, 7rem);
+    }
+
+    .mapa-layout {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: clamp(3rem, 6vw, 7rem);
+      align-items: start;
+    }
+
+    .mapa-embed {
+      border-radius: var(--r-card);
+      overflow: hidden;
+      border: 1px solid var(--accent-border);
+      aspect-ratio: 4 / 3;
+    }
+    .mapa-embed iframe {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+
+    /* ============================================================
+       RESPONSIVE
+       ============================================================ */
+    @media (max-width: 1024px) {
+      .program-layout { grid-template-columns: 1fr; }
+      .mapa-layout { grid-template-columns: 1fr; }
+      .kapely-grid { grid-template-columns: repeat(3, 1fr); }
+      .chasa-intro { grid-template-columns: 1fr; gap: 2.5rem; }
+      .info-grid { grid-template-columns: 1fr; }
+      .info-cell { border-right: none; border-bottom: 1px solid var(--accent-border); }
+      .info-cell:last-child { border-bottom: none; }
+    }
+
+    @media (max-width: 768px) {
+      .hody-hero-divider { display: none; }
+      .hody-hero-meta { gap: 1.25rem; }
+      .kapely-grid { grid-template-columns: 1fr; gap: 1rem; }
+      .stanky-grid { grid-template-columns: 1fr; }
+      .starka-pair { grid-template-columns: 1fr 1fr; }
+      .par { grid-template-columns: 1fr auto 1fr; }
+      .par-clen { font-size: 0.9375rem; }
+    }
+
+    @media (max-width: 560px) {
+      .hody-hero-title { font-size: clamp(3rem, 12vw, 5rem); }
+      .starka-pair { grid-template-columns: 1fr; max-width: 320px; }
+      .mala-chasa-list { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ======= NAV ======= -->
+  <header class="site-header">
+    <nav class="nav-pill" id="nav">
+      <a href="/" class="nav-logo">
+        <span class="nav-logo-ornament" aria-hidden="true"></span>
+        Mackovská chasa
+      </a>
+      <ul class="nav-links" role="list">
+        <li><a href="/#hody" class="nav-link">Hody</a></li>
+        <li><a href="/#o-nas" class="nav-link">O nás</a></li>
+        <li><a href="/#clenove" class="nav-link">Členové</a></li>
+        <li><a href="/#stanovy" class="nav-link">Stanovy</a></li>
+        <li><a href="/#kontakt" class="nav-link">Kontakt</a></li>
+      </ul>
+      <button class="nav-hamburger" id="nav-toggle" aria-label="Otevřít menu" aria-expanded="false">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+    </nav>
+  </header>
+
+  <!-- ======= MOBILE MENU ======= -->
+  <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+    <ul class="mobile-links" role="list">
+      <li><a href="/#hody" class="mobile-link">Hody</a></li>
+      <li><a href="/#o-nas" class="mobile-link">O nás</a></li>
+      <li><a href="/#clenove" class="mobile-link">Členové</a></li>
+      <li><a href="/#stanovy" class="mobile-link">Stanovy</a></li>
+      <li><a href="/#kontakt" class="mobile-link">Kontakt</a></li>
+    </ul>
+    <p class="mobile-meta">Mackovice · Jižní Morava · z. s.</p>
+  </div>
+
+  <main>
+
+    <!-- ======= HERO ======= -->
+    <section class="hody-hero">
+
+      <div class="hody-hero-bg">
+        <img src="../img/hody26showcase.jpg" alt="Krojované hody Mackovice 2026" loading="eager">
+      </div>
+
+      <div class="hody-hero-content">
+
+        <div class="hody-hero-eyebrow" data-reveal>
+          <span class="eyebrow-dot" aria-hidden="true"></span>
+          Krojované hody · Mackovice
+        </div>
+
+        <h1 class="hody-hero-title" data-reveal data-reveal-delay="1">
+          Hody<br><em>2026</em>
+        </h1>
+
+        <div class="hody-hero-meta" data-reveal data-reveal-delay="2">
+          <div class="hody-hero-date-block">
+            <span class="hody-hero-day">25</span>
+            <span class="hody-hero-monthyear">července 2026</span>
+          </div>
+          <div class="hody-hero-divider" aria-hidden="true"></div>
+          <div class="hody-hero-location">
+            <strong>Společenský areál</strong>
+            u fotbalového hřiště Mackovice
+          </div>
+        </div>
+
+        <div class="hody-hero-actions" data-reveal data-reveal-delay="3">
+          <a href="https://www.facebook.com/profile.php?id=61574904335853" target="_blank" rel="noopener" class="btn-fb">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987H7.898V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"/>
+            </svg>
+            Sledovat na Facebooku
+          </a>
+          <a href="https://www.facebook.com/events/1931113750920307/" target="_blank" rel="noopener" class="btn-fb">
+            <svg width="15" height="15" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+              <rect x="1.5" y="3" width="13" height="11.5" rx="1.5" stroke="currentColor" stroke-width="1.25"/>
+              <path d="M1.5 6.5h13" stroke="currentColor" stroke-width="1.25"/>
+              <path d="M4.5 1.5v3M11.5 1.5v3" stroke="currentColor" stroke-width="1.25" stroke-linecap="round"/>
+            </svg>
+            Facebook event
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ======= INFO STRIP ======= -->
+    <section class="section-info">
+      <div class="container">
+        <div class="info-grid" data-reveal>
+          <div class="info-cell">
+            <span class="info-cell-label">Datum</span>
+            <span class="info-cell-value">25. července 2026</span>
+            <span class="info-cell-sub">Sobota</span>
+          </div>
+          <div class="info-cell">
+            <span class="info-cell-label">Místo</span>
+            <span class="info-cell-value">Mackovice</span>
+            <span class="info-cell-sub">Společenský areál u fotbalového hřiště</span>
+          </div>
+          <div class="info-cell">
+            <span class="info-cell-label">Vstupné</span>
+            <span class="info-cell-value">150 Kč</span>
+            <span class="info-cell-sub" style="margin-top: 0.5rem; display: flex; align-items: center; gap: 0.35rem;">
+              <svg width="12" height="12" viewBox="0 0 16 16" fill="none" aria-hidden="true" style="flex-shrink:0; color: #2a7a4f; opacity: 0.8;">
+                <rect x="1.5" y="4" width="13" height="9" rx="1.5" stroke="currentColor" stroke-width="1.25"/>
+                <path d="M1.5 7h13" stroke="currentColor" stroke-width="1.25"/>
+                <path d="M5 10.5h2" stroke="currentColor" stroke-width="1.25" stroke-linecap="round"/>
+                <path d="M10.5 10.5h1" stroke="currentColor" stroke-width="1.25" stroke-linecap="round"/>
+              </svg>
+              Platba kartou i hotovostí
+            </span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======= MÍSTO KONÁNÍ ======= -->
+    <section class="section-mapa" id="misto">
+      <div class="container">
+        <div class="mapa-layout">
+
+          <div data-reveal>
+            <div class="eyebrow">
+              <span class="eyebrow-dot" aria-hidden="true"></span>
+              Místo konání
+            </div>
+            <h2 class="section-title">Kde nás<br><em>najdete</em></h2>
+            <p style="margin-top: 1.5rem; font-size: 0.9375rem; color: var(--text-muted); line-height: 1.8; max-width: 32ch;">
+              Společenský areál u fotbalového hřiště<br>
+              <strong style="color: var(--text); font-weight: 500;">Mackovice</strong>
+            </p>
+          </div>
+
+          <div class="mapa-embed" data-reveal data-reveal-delay="1">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1115.160807347662!2d16.307175089139477!3d48.88384800633532!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4712b3004fdaa3e5%3A0xef029eb1fc51a6df!2zU3BvbGXEjWVuc2vDvSBhcmXDoWwgdSBmb3RiYWxvdsOpaG8gaMWZacWhdMSb!5e1!3m2!1scs!2scz!4v1781967936627!5m2!1scs!2scz"
+              style="border:0;"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              title="Místo konání: Společenský areál u fotbalového hřiště Mackovice"
+            ></iframe>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ======= PROGRAM ======= -->
+    <section class="section-program" id="program">
+      <div class="container">
+        <div class="program-layout">
+
+          <div data-reveal>
+            <div class="eyebrow">
+              <span class="eyebrow-dot" aria-hidden="true"></span>
+              Program dne
+            </div>
+            <h2 class="section-title">Jak to<br><em>půjde za sebou</em></h2>
+            <p style="margin-top: 1.5rem; font-size: 0.9375rem; color: var(--text-muted); line-height: 1.8; max-width: 36ch;">
+              Od ranního požehnání chase až po půlnoční muziku — takhle se u nás v Mackovicích slaví hody.
+            </p>
+          </div>
+
+          <div data-reveal data-reveal-delay="1">
+            <div class="program-list">
+              <div class="program-item">
+                <span class="program-time">8:00</span>
+                <span class="program-event">Požehnání krojované chase v kostele Zasnoubení Panny Marie</span>
+              </div>
+              <div class="program-item">
+                <span class="program-time">8:30</span>
+                <span class="program-event">
+                  Vystoupení malé chasy
+                  <span class="program-event-note">+ slavnostní předání hodového práva</span>
+                </span>
+              </div>
+              <div class="program-item">
+                <span class="program-time">9:00</span>
+                <span class="program-event">
+                  Hodový průvod vesnicí
+                  <span class="program-event-note">za doprovodu kapely TRENĎANKA</span>
+                </span>
+              </div>
+              <div class="program-item">
+                <span class="program-time">15:00</span>
+                <span class="program-event">Hodové odpoledne</span>
+              </div>
+              <div class="program-item">
+                <span class="program-time">16:00</span>
+                <span class="program-event">Cimbálová muzika</span>
+              </div>
+              <div class="program-item">
+                <span class="program-time">20:00</span>
+                <span class="program-event">
+                  Večerní hodová zábava
+                  <span class="program-event-note">s kapelou TATABAND Znojmo</span>
+                </span>
+              </div>
+              <div class="program-item">
+                <span class="program-time">21:00</span>
+                <span class="program-event">Slavnostní nástup malé a velké krojované chasy</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ======= KAPELY ======= -->
+    <section class="section-kapely" id="kapely">
+      <div class="container">
+
+        <div class="section-header" data-reveal>
+          <div class="eyebrow eyebrow--light">
+            <span class="eyebrow-dot" aria-hidden="true"></span>
+            Hudba
+          </div>
+          <h2 class="section-title">Vystupující<br>kapely</h2>
+        </div>
+
+        <div class="kapely-grid">
+
+          <div class="kapela-card" data-reveal data-reveal-delay="1">
+            <div class="kapela-card-inner">
+              <span class="kapela-number">01</span>
+              <span class="kapela-time">09:00 – 15:00</span>
+              <h3 class="kapela-name">TRENĎANKA</h3>
+              <p class="kapela-desc">Dechová kapela doprovázející chasu při průvodu Mackovicemi</p>
+            </div>
+          </div>
+
+          <div class="kapela-card" data-reveal data-reveal-delay="2">
+            <div class="kapela-card-inner">
+              <span class="kapela-number">02</span>
+              <span class="kapela-time">16:00 – 18:00</span>
+              <h3 class="kapela-name">Cimbálová&nbsp;muzika DENÁR</h3>
+              <p class="kapela-desc">Cimbálka na odpolední program</p>
+            </div>
+          </div>
+
+          <div class="kapela-card" data-reveal data-reveal-delay="3">
+            <div class="kapela-card-inner">
+              <span class="kapela-number">03</span>
+              <span class="kapela-time">20:00 – 03:00</span>
+              <h3 class="kapela-name">TATABAND Znojmo</h3>
+              <p class="kapela-desc">Kapela na večerní hodovou zábavu</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ======= KROJOVANÁ CHASA ======= -->
+    <!-- CHASA ZATÍM SKRYTA — doplníme před hody 2026; odebrat atribut hidden -->
+    <section class="section-chasa" id="chasa" hidden>
+      <div class="container">
+
+        <div class="chasa-intro">
+          <div data-reveal>
+            <div class="eyebrow">
+              <span class="eyebrow-dot" aria-hidden="true"></span>
+              Krojovaná chasa
+            </div>
+            <h2 class="section-title">Naša<br><em>chasa 2026</em></h2>
+          </div>
+          <div data-reveal data-reveal-delay="1" style="padding-top: 0.5rem;">
+            <p style="font-size: 0.9375rem; color: var(--text-muted); line-height: 1.8; max-width: 48ch;">
+              Tradici krojovaných hodů nesou na svých bedrech chlapci a dívky z Mackovic, oblečení v kyjovských krojích. Velká chasa tančí v párech, malá chasa přidává životní elán a radost.
+            </p>
+          </div>
+        </div>
+
+        <!-- === Hlavní stárek + stárka === -->
+        <div class="chasa-group-header" data-reveal>
+          <span class="eyebrow-dot" aria-hidden="true" style="color: var(--accent); width:5px; height:5px; background: var(--accent); border-radius:50%; display:inline-block; flex-shrink:0;"></span>
+          <h3 class="chasa-group-title">Hlavní pár</h3>
+        </div>
+
+        <div class="starka-pair" data-reveal data-reveal-delay="1">
+
+          <div class="starka-card">
+            <div class="starka-card-inner">
+              <div class="starka-photo">
+                <img src="../img/davidm.JPG" alt="David Myška, hlavní stárek" loading="lazy">
+              </div>
+              <div class="starka-info">
+                <span class="starka-role">Hlavní stárek</span>
+                <span class="starka-name">David Myška</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="starka-card">
+            <div class="starka-card-inner">
+              <div class="starka-photo">
+                <!-- Doplnit foto hlavní stárky -->
+                <img src="../img/mistopredseda.JPG" alt="Hlavní stárka" loading="lazy">
+              </div>
+              <div class="starka-info">
+                <span class="starka-role">Hlavní stárka</span>
+                <span class="starka-name">Hlavní stárková</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- === Velká chasa – páry === -->
+        <div class="chasa-group-header" data-reveal>
+          <span class="eyebrow-dot" aria-hidden="true" style="color: var(--accent); width:5px; height:5px; background: var(--accent); border-radius:50%; display:inline-block; flex-shrink:0;"></span>
+          <h3 class="chasa-group-title">Velká chasa</h3>
+          <span class="chasa-group-count">páry</span>
+        </div>
+
+        <div class="velka-chasa-pairs" data-reveal data-reveal-delay="1">
+
+          <!-- Šohaj vlevo, děvčica vpravo — doplnit skutečná jména -->
+          <div class="par">
+            <span class="par-clen par-clen--sohaj">Šohaj 1</span>
+            <span class="par-separator" aria-hidden="true">
+              <svg viewBox="0 0 16 16" fill="none">
+                <path d="M8 13.5S2 9.8 2 5.8a3 3 0 0 1 6-0.3 3 3 0 0 1 6 0.3C14 9.8 8 13.5 8 13.5z" fill="currentColor"/>
+              </svg>
+            </span>
+            <span class="par-clen par-clen--devcica">Děvčica 1</span>
+          </div>
+
+          <div class="par">
+            <span class="par-clen par-clen--sohaj">Šohaj 2</span>
+            <span class="par-separator" aria-hidden="true">
+              <svg viewBox="0 0 16 16" fill="none">
+                <path d="M8 13.5S2 9.8 2 5.8a3 3 0 0 1 6-0.3 3 3 0 0 1 6 0.3C14 9.8 8 13.5 8 13.5z" fill="currentColor"/>
+              </svg>
+            </span>
+            <span class="par-clen par-clen--devcica">Děvčica 2</span>
+          </div>
+
+          <div class="par">
+            <span class="par-clen par-clen--sohaj">Šohaj 3</span>
+            <span class="par-separator" aria-hidden="true">
+              <svg viewBox="0 0 16 16" fill="none">
+                <path d="M8 13.5S2 9.8 2 5.8a3 3 0 0 1 6-0.3 3 3 0 0 1 6 0.3C14 9.8 8 13.5 8 13.5z" fill="currentColor"/>
+              </svg>
+            </span>
+            <span class="par-clen par-clen--devcica">Děvčica 3</span>
+          </div>
+
+          <div class="par">
+            <span class="par-clen par-clen--sohaj">Šohaj 4</span>
+            <span class="par-separator" aria-hidden="true">
+              <svg viewBox="0 0 16 16" fill="none">
+                <path d="M8 13.5S2 9.8 2 5.8a3 3 0 0 1 6-0.3 3 3 0 0 1 6 0.3C14 9.8 8 13.5 8 13.5z" fill="currentColor"/>
+              </svg>
+            </span>
+            <span class="par-clen par-clen--devcica">Děvčica 4</span>
+          </div>
+
+          <div class="par">
+            <span class="par-clen par-clen--sohaj">Šohaj 5</span>
+            <span class="par-separator" aria-hidden="true">
+              <svg viewBox="0 0 16 16" fill="none">
+                <path d="M8 13.5S2 9.8 2 5.8a3 3 0 0 1 6-0.3 3 3 0 0 1 6 0.3C14 9.8 8 13.5 8 13.5z" fill="currentColor"/>
+              </svg>
+            </span>
+            <span class="par-clen par-clen--devcica">Děvčica 5</span>
+          </div>
+
+          <!-- Přidat další páry podle potřeby -->
+
+        </div>
+
+        <!-- === Malá chasa === -->
+        <div class="chasa-group-header" data-reveal>
+          <span class="eyebrow-dot" aria-hidden="true" style="color: var(--accent); width:5px; height:5px; background: var(--accent); border-radius:50%; display:inline-block; flex-shrink:0;"></span>
+          <h3 class="chasa-group-title">Malá chasa</h3>
+        </div>
+
+        <div class="mala-chasa-list" data-reveal data-reveal-delay="1">
+          <!-- Doplnit jména malé chasy -->
+          <span class="mala-chasa-clen">Jméno 1</span>
+          <span class="mala-chasa-clen">Jméno 2</span>
+          <span class="mala-chasa-clen">Jméno 3</span>
+          <span class="mala-chasa-clen">Jméno 4</span>
+          <span class="mala-chasa-clen">Jméno 5</span>
+          <span class="mala-chasa-clen">Jméno 6</span>
+          <!-- Přidat další -->
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ======= STÁNKY ======= -->
+    <section class="section-stanky" id="stanky">
+      <div class="container">
+
+        <div class="section-header" data-reveal>
+          <div class="eyebrow">
+            <span class="eyebrow-dot" aria-hidden="true"></span>
+            Občerstvení & nápoje
+          </div>
+          <h2 class="section-title">Co na vás<br><em>čeká u stánků</em></h2>
+        </div>
+
+        <div class="stanky-grid">
+
+          <!-- Vinařství Kacetl -->
+          <div class="stanek-card stanek-card--vino" data-reveal data-reveal-delay="1">
+            <div class="stanek-card-inner">
+              <div class="stanek-card-top">
+                <span class="stanek-hours">
+                  <svg width="11" height="11" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                    <circle cx="8" cy="8" r="6.5" stroke="currentColor" stroke-width="1.25"/>
+                    <path d="M8 5v3.2l2 1.3" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                  16:00 – 00:00
+                </span>
+              </div>
+              <h3 class="stanek-name">Vinařství<br>Kacetl</h3>
+              <p class="stanek-items">Výborná vína přímo od Mackovského oceněného vinaře — bílá, červená i rosé.</p>
+              <div class="stanek-footer">
+                <span class="stanek-payment stanek-payment--cash">
+                  <svg width="12" height="12" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                    <rect x="1.5" y="4" width="13" height="9" rx="1.5" stroke="currentColor" stroke-width="1.25"/>
+                    <path d="M1.5 7h13" stroke="currentColor" stroke-width="1.25"/>
+                    <path d="M5 10.5h2" stroke="currentColor" stroke-width="1.25" stroke-linecap="round"/>
+                  </svg>
+                  Pouze hotovost
+                </span>
+                <a href="https://www.vinarstvikacetl.cz/" target="_blank" rel="noopener" class="stanek-web">
+                  <svg width="11" height="11" viewBox="0 0 15 15" fill="none" aria-hidden="true">
+                    <path d="M3 7.5h9M8.5 3.5l4 4-4 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                  vinarstvikacetl.cz
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Pivo / Limo -->
+          <div class="stanek-card" data-reveal data-reveal-delay="2">
+            <div class="stanek-card-inner">
+              <div class="stanek-card-top">
+                <span class="stanek-hours">
+                  <svg width="11" height="11" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                    <circle cx="8" cy="8" r="6.5" stroke="currentColor" stroke-width="1.25"/>
+                    <path d="M8 5v3.2l2 1.3" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                  15:00 – 03:00
+                </span>
+              </div>
+              <h3 class="stanek-name">Pivo<br>& Limonáda</h3>
+              <p class="stanek-items">Točené pivo a limonáda — hladí žízeň od odpoledne až do rána.</p>
+              <div class="stanek-footer">
+                <span class="stanek-payment stanek-payment--card">
+                  <svg width="12" height="12" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                    <rect x="1.5" y="4" width="13" height="9" rx="1.5" stroke="currentColor" stroke-width="1.25"/>
+                    <path d="M1.5 7h13" stroke="currentColor" stroke-width="1.25"/>
+                    <path d="M5 10.5h2" stroke="currentColor" stroke-width="1.25" stroke-linecap="round"/>
+                    <path d="M10.5 10.5h1" stroke="currentColor" stroke-width="1.25" stroke-linecap="round"/>
+                  </svg>
+                  Platba kartou OK
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Stánek s občerstvením -->
+          <div class="stanek-card" data-reveal data-reveal-delay="3">
+            <div class="stanek-card-inner">
+              <div class="stanek-card-top">
+                <span class="stanek-hours">
+                  <svg width="11" height="11" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                    <circle cx="8" cy="8" r="6.5" stroke="currentColor" stroke-width="1.25"/>
+                    <path d="M8 5v3.2l2 1.3" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                  16:00 – 03:00
+                </span>
+              </div>
+              <h3 class="stanek-name">Stánek<br>s občerstvením</h3>
+              <p class="stanek-items">Párky v rohlíku, živáň, hranolky a prase na rožni — hodová klasika, na které se těšíme celý rok.</p>
+              <div class="stanek-footer">
+                <span class="stanek-payment stanek-payment--cash">
+                  <svg width="12" height="12" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                    <rect x="1.5" y="4" width="13" height="9" rx="1.5" stroke="currentColor" stroke-width="1.25"/>
+                    <path d="M1.5 7h13" stroke="currentColor" stroke-width="1.25"/>
+                    <path d="M5 10.5h2" stroke="currentColor" stroke-width="1.25" stroke-linecap="round"/>
+                  </svg>
+                  Pouze hotovost
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tvrdý alkohol -->
+          <div class="stanek-card" data-reveal data-reveal-delay="4">
+            <div class="stanek-card-inner">
+              <div class="stanek-card-top">
+                <span class="stanek-hours">
+                  <svg width="11" height="11" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                    <circle cx="8" cy="8" r="6.5" stroke="currentColor" stroke-width="1.25"/>
+                    <path d="M8 5v3.2l2 1.3" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                  19:00 – 03:00
+                </span>
+              </div>
+              <h3 class="stanek-name">Tvrdý<br>alkohol</h3>
+              <p class="stanek-items">Tvrdý alkohol, energy drinky, džus a voda v PET flaškách — pro dlouhé hodové noci.</p>
+              <div class="stanek-footer">
+                <span class="stanek-payment stanek-payment--card">
+                  <svg width="12" height="12" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                    <rect x="1.5" y="4" width="13" height="9" rx="1.5" stroke="currentColor" stroke-width="1.25"/>
+                    <path d="M1.5 7h13" stroke="currentColor" stroke-width="1.25"/>
+                    <path d="M5 10.5h2" stroke="currentColor" stroke-width="1.25" stroke-linecap="round"/>
+                    <path d="M10.5 10.5h1" stroke="currentColor" stroke-width="1.25" stroke-linecap="round"/>
+                  </svg>
+                  Platba kartou OK
+                </span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <p class="sponzori-note" style="margin-top: 1.75rem;" data-reveal>
+          Doporučujeme mít u sebe i hotovost — ne všechny stánky přijímají platbu kartou.
+        </p>
+
+      </div>
+    </section>
+
+    <!-- ======= SPONZOŘI ======= -->
+    <section class="section-sponzori" id="sponzori">
+      <div class="container">
+
+        <div class="sponzori-header" data-reveal>
+          <div class="eyebrow">
+            <span class="eyebrow-dot" aria-hidden="true"></span>
+            Sponzoři
+          </div>
+          <h2 class="section-title">Díky těm,<br><em>kdo nás podporují</em></h2>
+        </div>
+
+        <div class="sponzori-grid">
+
+          <a href="https://zdenekpodany.cz" class="sponzor-card" target="_blank" rel="noopener" data-reveal data-reveal-delay="1">
+            <div class="sponzor-card-inner">
+              <span class="sponzor-name">Zdeněk Podaný<br>Webovky Jednoduše</span>
+              <span class="sponzor-url">
+                <svg width="11" height="11" viewBox="0 0 15 15" fill="none" aria-hidden="true">
+                  <path d="M3 7.5h9M8.5 3.5l4 4-4 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                zdenekpodany.cz
+              </span>
+            </div>
+          </a>
+
+          <a href="https://mackovice.cz" class="sponzor-card" target="_blank" rel="noopener" data-reveal data-reveal-delay="2">
+            <div class="sponzor-card-inner">
+              <span class="sponzor-name">Obec Mackovice</span>
+              <span class="sponzor-url">
+                <svg width="11" height="11" viewBox="0 0 15 15" fill="none" aria-hidden="true">
+                  <path d="M3 7.5h9M8.5 3.5l4 4-4 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                mackovice.cz
+              </span>
+            </div>
+          </a>
+
+        </div>
+
+        <p class="sponzori-note" data-reveal>
+          Zájem o sponzorství? Napište nám na <a href="mailto:mackovskachasa@gmail.com" style="color: var(--accent);">mackovskachasa@gmail.com</a>.
+        </p>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ======= FOOTER ======= -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <span class="footer-logo">Mackovská chasa z.&nbsp;s.</span>
+          <p class="footer-tagline">Krojované hody · Mackovice · Jižní Morava</p>
+        </div>
+        <nav class="footer-nav" aria-label="Footer navigace">
+          <a href="/#hody">Hody</a>
+          <a href="/#o-nas">O nás</a>
+          <a href="/#clenove">Členové</a>
+          <a href="/#stanovy">Stanovy</a>
+          <a href="/#kontakt">Kontakt</a>
+        </nav>
+        <p class="footer-copy">© 2026 Mackovská chasa z.&nbsp;s.</p>
+      </div>
+      <div class="footer-meta">
+        <div class="footer-meta-left">
+          <span>IČO: <a href="https://ares.gov.cz/ekonomicke-subjekty/res/23022612" target="_blank" rel="noopener">23022612</a></span>
+          <span><a href="https://verejnerejstriky.msp.gov.cz/vypis/1271665" target="_blank" rel="noopener">Spolek zapsaný v&nbsp;rejstříku spolků</a></span>
+          <span>Bankovní účet: 6803739359/0800</span>
+        </div>
+        <div class="footer-meta-right">
+          <a href="https://www.facebook.com/profile.php?id=61574904335853" target="_blank" rel="noopener" class="footer-fb" aria-label="Facebook">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987H7.898V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"/>
+            </svg>
+            Facebook
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../main.js"></script>
+</body>
+</html>
