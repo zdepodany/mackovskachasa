@@ -1,0 +1,16 @@
+{
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/hody.html",
+      "destination": "/hody/2025",
+      "permanent": true
+    },
+    {
+      "source": "/docs/V2 - Stanovy - Mackovská chasa zs.pdf",
+      "destination": "/docs/mc-stanovy-v3.pdf",
+      "permanent": true
+    }
+  ]
+}
