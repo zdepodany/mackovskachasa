@@ -1,0 +1,1307 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Krojované hody Mackovice 2025 — Mackovská chasa z. s.</title>
+  <meta name="description" content="Krojované hody Mackovice 2025 — Společenský areál u fotbalového hřiště Mackovice. Program, kapely, chasa a sponzoři.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+
+  <style>
+    /* ============================================================
+       HODY 2025 — Page-specific styles
+       ============================================================ */
+
+    /* === SUBPAGE HERO === */
+    .hody-hero {
+      position: relative;
+      min-height: 92dvh;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      overflow: hidden;
+    }
+
+    .hody-hero-bg {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+    }
+    .hody-hero-bg img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      object-position: center 30%;
+    }
+    .hody-hero-bg::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(to top, rgba(26, 11, 6, 0.92) 0%, rgba(26, 11, 6, 0.55) 50%, rgba(26, 11, 6, 0.2) 100%);
+    }
+
+    .hody-hero-content {
+      position: relative;
+      z-index: 1;
+      padding-bottom: clamp(3.5rem, 7vw, 6rem);
+      padding-inline: clamp(1.25rem, 5vw, 4rem);
+      max-width: 1320px;
+      margin-inline: auto;
+      width: 100%;
+    }
+
+    .hody-hero-back {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 2;
+      padding: 1.5rem clamp(1.25rem, 5vw, 4rem) 0;
+      max-width: 1320px;
+      margin-inline: auto;
+    }
+
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.8rem;
+      font-weight: 400;
+      letter-spacing: 0.06em;
+      color: rgba(253, 250, 244, 0.55);
+      transition: color 0.2s;
+    }
+    .back-link:hover { color: rgba(253, 250, 244, 0.9); }
+    .back-link svg { flex-shrink: 0; }
+
+    .hody-hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: var(--font-body);
+      font-size: 0.68rem;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1.25rem;
+    }
+
+    .hody-hero-title {
+      font-family: var(--font-display);
+      font-size: clamp(3.5rem, 9vw, 8.5rem);
+      font-weight: 300;
+      line-height: 0.92;
+      letter-spacing: -0.03em;
+      color: var(--bg);
+      margin-bottom: 2rem;
+    }
+    .hody-hero-title em {
+      font-style: italic;
+      color: var(--gold);
+      display: block;
+    }
+
+    .hody-hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 1.5rem 3rem;
+    }
+
+    .hody-hero-date-block {
+      display: flex;
+      align-items: baseline;
+      gap: 0.625rem;
+    }
+    .hody-hero-day {
+      font-family: var(--font-display);
+      font-size: 3.5rem;
+      font-weight: 300;
+      line-height: 1;
+      color: var(--bg);
+      letter-spacing: -0.03em;
+    }
+    .hody-hero-monthyear {
+      font-size: 1rem;
+      font-weight: 300;
+      color: rgba(253, 250, 244, 0.5);
+      letter-spacing: 0.04em;
+    }
+
+    .hody-hero-divider {
+      width: 1px;
+      height: 2.5rem;
+      background: rgba(253, 250, 244, 0.2);
+    }
+
+    .hody-hero-location {
+      font-size: 0.9375rem;
+      font-weight: 300;
+      color: rgba(253, 250, 244, 0.6);
+      line-height: 1.5;
+      max-width: 26ch;
+    }
+    .hody-hero-location strong {
+      display: block;
+      font-weight: 400;
+      color: rgba(253, 250, 244, 0.85);
+      margin-bottom: 0.2rem;
+    }
+
+    .hody-hero-actions {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-top: 2.5rem;
+    }
+
+    .btn-fb {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      background: rgba(253, 250, 244, 0.1);
+      border: 1px solid rgba(253, 250, 244, 0.2);
+      color: var(--bg);
+      font-size: 0.875rem;
+      font-weight: 400;
+      padding: 0.7rem 1.25rem;
+      border-radius: var(--r-pill);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      transition: background 0.2s, border-color 0.2s;
+    }
+    .btn-fb:hover {
+      background: rgba(253, 250, 244, 0.16);
+      border-color: rgba(253, 250, 244, 0.35);
+    }
+
+    /* Archivní badge */
+    .badge-archive {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      font-size: 0.65rem;
+      font-weight: 500;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: rgba(253, 250, 244, 0.55);
+      border: 1px solid rgba(253, 250, 244, 0.18);
+      border-radius: var(--r-pill);
+      padding: 0.35rem 0.85rem;
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
+
+    /* === UPCOMING / INFO STRIP === */
+    .section-info {
+      background: var(--bg-warm);
+      padding-block: clamp(3rem, 6vw, 5rem);
+    }
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0;
+      border: 1px solid var(--accent-border);
+      border-radius: var(--r-card);
+      overflow: hidden;
+    }
+
+    .info-cell {
+      padding: clamp(1.5rem, 3vw, 2.5rem);
+      border-right: 1px solid var(--accent-border);
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .info-cell:last-child { border-right: none; }
+
+    .info-cell-label {
+      font-size: 0.65rem;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+    .info-cell-value {
+      font-family: var(--font-display);
+      font-size: clamp(1.25rem, 2.5vw, 1.75rem);
+      font-weight: 400;
+      color: var(--text);
+      line-height: 1.25;
+    }
+    .info-cell-sub {
+      font-size: 0.8125rem;
+      color: var(--text-muted);
+      margin-top: 0.25rem;
+    }
+    .info-cell-tba {
+      display: inline-block;
+      font-size: 0.65rem;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--text-light);
+      background: var(--accent-subtle);
+      border-radius: var(--r-pill);
+      padding: 0.25rem 0.6rem;
+      margin-top: 0.25rem;
+      width: fit-content;
+    }
+
+    /* === PROGRAM === */
+    .section-program {
+      background: var(--bg);
+      padding-block: clamp(4rem, 8vw, 7rem);
+    }
+
+    .program-layout {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: clamp(3rem, 6vw, 7rem);
+      align-items: start;
+    }
+
+    .program-list {
+      display: flex;
+      flex-direction: column;
+      border-top: 1px solid var(--accent-border);
+    }
+
+    .program-item {
+      display: grid;
+      grid-template-columns: 5.5rem 1fr;
+      gap: 1.5rem;
+      align-items: baseline;
+      padding: 1.125rem 0;
+      border-bottom: 1px solid var(--accent-border);
+    }
+
+    .program-time {
+      font-family: var(--font-display);
+      font-size: 1.125rem;
+      font-weight: 400;
+      color: var(--accent);
+      letter-spacing: 0.02em;
+    }
+
+    .program-event {
+      font-size: 0.9375rem;
+      color: var(--text);
+      line-height: 1.55;
+    }
+    .program-event-note {
+      display: block;
+      font-size: 0.8125rem;
+      color: var(--text-muted);
+      margin-top: 0.2rem;
+    }
+
+    .program-placeholder {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      padding: 4rem 2rem;
+      border: 1px dashed var(--accent-border);
+      border-radius: var(--r-card);
+      text-align: center;
+    }
+    .program-placeholder-icon {
+      width: 44px; height: 44px;
+      color: var(--accent);
+      opacity: 0.35;
+    }
+    .program-placeholder p {
+      font-size: 0.9rem;
+      color: var(--text-light);
+      font-style: italic;
+    }
+
+    /* === KAPELY === */
+    .section-kapely {
+      background: var(--bg-dark);
+      padding-block: clamp(4rem, 8vw, 7rem);
+      position: relative;
+      overflow: hidden;
+    }
+    .section-kapely::before {
+      content: '';
+      position: absolute;
+      top: -80px; right: -80px;
+      width: 420px; height: 420px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(196, 144, 42, 0.1) 0%, transparent 65%);
+      pointer-events: none;
+    }
+    .section-kapely .eyebrow { color: var(--gold); }
+    .section-kapely .section-title { color: var(--bg); }
+
+    .kapely-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+      margin-top: clamp(2rem, 4vw, 3.5rem);
+    }
+
+    .kapela-card {
+      border-radius: var(--r-card);
+      background: rgba(253, 250, 244, 0.04);
+      border: 1px solid var(--cream-border);
+      padding: 0.3125rem;
+      transition: border-color 0.25s;
+    }
+    .kapela-card:hover { border-color: var(--gold-border); }
+
+    .kapela-card-inner {
+      border-radius: var(--r-card-inner);
+      padding: clamp(1.5rem, 2.5vw, 2.25rem);
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+      min-height: 200px;
+    }
+
+    .kapela-number {
+      font-family: var(--font-display);
+      font-size: 3rem;
+      font-weight: 300;
+      line-height: 1;
+      color: rgba(253, 250, 244, 0.06);
+      letter-spacing: -0.04em;
+      margin-bottom: -0.5rem;
+    }
+
+    .kapela-time {
+      display: inline-block;
+      font-size: 0.65rem;
+      font-weight: 500;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--gold);
+      border: 1px solid var(--gold-border);
+      border-radius: var(--r-pill);
+      padding: 0.28rem 0.7rem;
+      width: fit-content;
+    }
+    .kapela-time--tba {
+      color: rgba(253, 250, 244, 0.3);
+      border-color: rgba(253, 250, 244, 0.12);
+    }
+
+    .kapela-name {
+      font-family: var(--font-display);
+      font-size: clamp(1.375rem, 2.5vw, 1.875rem);
+      font-weight: 400;
+      color: var(--bg);
+      line-height: 1.2;
+      letter-spacing: -0.01em;
+      margin-top: auto;
+    }
+
+    .kapela-desc {
+      font-size: 0.8125rem;
+      color: rgba(253, 250, 244, 0.4);
+      line-height: 1.6;
+    }
+
+    /* === CHASA === */
+    .section-chasa {
+      background: var(--bg);
+      padding-block: clamp(4rem, 8vw, 7rem);
+    }
+
+    .chasa-intro {
+      display: grid;
+      grid-template-columns: 1fr 1.4fr;
+      gap: clamp(3rem, 6vw, 8rem);
+      align-items: start;
+      margin-bottom: clamp(3.5rem, 6vw, 6rem);
+    }
+
+    /* Stárek + stárka — featured pair with photos */
+    .starka-pair {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.25rem;
+      margin-bottom: clamp(3rem, 5vw, 5rem);
+    }
+
+    .starka-card {
+      border-radius: var(--r-card);
+      background: var(--accent-subtle);
+      border: 1px solid var(--accent-border);
+      padding: 0.3125rem;
+      transition: border-color 0.25s;
+    }
+    .starka-card:hover { border-color: rgba(139, 26, 46, 0.35); }
+
+    .starka-card-inner {
+      border-radius: var(--r-card-inner);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .starka-photo {
+      aspect-ratio: 3 / 4;
+      overflow: hidden;
+      background: var(--bg-warm);
+    }
+    .starka-photo img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      transition: transform 0.55s var(--ease-out);
+    }
+    .starka-card:hover .starka-photo img { transform: scale(1.04); }
+
+    .starka-info {
+      padding: 1.25rem 1.5rem;
+      background: var(--bg);
+      display: flex;
+      flex-direction: column;
+      gap: 0.2rem;
+    }
+    .starka-role {
+      font-size: 0.65rem;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+    .starka-name {
+      font-family: var(--font-display);
+      font-size: 1.375rem;
+      font-weight: 500;
+      color: var(--text);
+      line-height: 1.2;
+    }
+
+    /* Velká chasa pairs */
+    .chasa-group-header {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding-bottom: 0.875rem;
+      border-bottom: 1px solid var(--accent-border);
+      margin-bottom: 1.75rem;
+    }
+    .chasa-group-title {
+      font-size: 0.68rem;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+    .chasa-group-count {
+      font-size: 0.72rem;
+      color: var(--text-light);
+      margin-left: auto;
+    }
+
+    .velka-chasa-pairs {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      margin-bottom: clamp(3rem, 5vw, 5rem);
+    }
+
+    .par {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      align-items: center;
+      gap: 1rem;
+      padding: 0.875rem 0;
+      border-bottom: 1px solid rgba(139, 26, 46, 0.07);
+      transition: background 0.18s;
+    }
+    .par:first-child { border-top: 1px solid rgba(139, 26, 46, 0.07); }
+    .par:hover { background: var(--accent-subtle); margin-inline: -1rem; padding-inline: 1rem; border-radius: 0.5rem; border-color: transparent; }
+
+    .par-clen {
+      font-family: var(--font-display);
+      font-size: 1.0625rem;
+      font-weight: 400;
+      color: var(--text);
+      line-height: 1.3;
+    }
+    .par-clen--sohaj { text-align: left; }
+    .par-clen--devcica { text-align: right; color: var(--accent); }
+
+    .par-separator {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      width: 2rem;
+    }
+    .par-separator svg {
+      width: 16px; height: 16px;
+      color: var(--gold);
+      opacity: 0.6;
+    }
+
+    /* Malá chasa — text list */
+    .mala-chasa-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 0.5rem 2rem;
+    }
+
+    .mala-chasa-clen {
+      font-family: var(--font-display);
+      font-size: 1rem;
+      font-weight: 400;
+      color: var(--text-muted);
+      padding: 0.375rem 0;
+      border-bottom: 1px solid rgba(139, 26, 46, 0.06);
+      line-height: 1.4;
+    }
+
+    /* === SPONZOŘI === */
+    .section-sponzori {
+      background: var(--bg-warm);
+      padding-block: clamp(4rem, 8vw, 7rem);
+    }
+
+    .sponzori-header {
+      margin-bottom: clamp(2.5rem, 5vw, 4rem);
+    }
+
+    .sponzori-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 1rem;
+    }
+
+    .sponzor-card {
+      border-radius: var(--r-card);
+      background: var(--bg);
+      border: 1px solid var(--accent-border);
+      padding: 0.25rem;
+      text-decoration: none;
+      transition: border-color 0.22s, box-shadow 0.22s;
+      display: block;
+    }
+    .sponzor-card:hover {
+      border-color: rgba(139, 26, 46, 0.3);
+      box-shadow: 0 8px 32px -8px rgba(24, 16, 10, 0.1);
+    }
+
+    .sponzor-card-inner {
+      border-radius: var(--r-card-inner);
+      background: var(--bg);
+      padding: 1.75rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.875rem;
+      min-height: 130px;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.8);
+    }
+
+    .sponzor-name {
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+      font-weight: 500;
+      color: var(--text);
+      line-height: 1.25;
+    }
+    .sponzor-url {
+      font-size: 0.75rem;
+      color: var(--accent);
+      letter-spacing: 0.03em;
+      margin-top: auto;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+    .sponzor-url svg { flex-shrink: 0; opacity: 0.7; }
+
+    .sponzori-note {
+      margin-top: 2.5rem;
+      font-size: 0.875rem;
+      color: var(--text-light);
+      font-style: italic;
+    }
+
+    /* Hlavní sponzor */
+    .sponzor-card--hlavni {
+      border-color: var(--gold-border);
+      background: linear-gradient(135deg, var(--bg) 0%, rgba(196, 144, 42, 0.05) 100%);
+    }
+    .sponzor-card--hlavni:hover { border-color: var(--gold); }
+
+    .sponzor-badge-hlavni {
+      font-size: 0.6rem;
+      font-weight: 500;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--gold);
+      border: 1px solid var(--gold-border);
+      border-radius: var(--r-pill);
+      padding: 0.2rem 0.55rem;
+      width: fit-content;
+    }
+
+    /* Sponzor bez odkazu (div) */
+    div.sponzor-card { cursor: default; }
+    div.sponzor-card:hover { border-color: var(--accent-border); box-shadow: none; }
+
+    /* === VIDEO LINKS === */
+    .btn-video {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-size: 0.8125rem;
+      font-weight: 400;
+      color: var(--accent);
+      border: 1px solid var(--accent-border);
+      border-radius: var(--r-pill);
+      padding: 0.55rem 1rem;
+      transition: background 0.2s, border-color 0.2s;
+      width: fit-content;
+    }
+    .btn-video:hover {
+      background: var(--accent-subtle);
+      border-color: rgba(139, 26, 46, 0.25);
+    }
+
+    /* ============================================================
+       RESPONSIVE
+       ============================================================ */
+    @media (max-width: 1024px) {
+      .program-layout { grid-template-columns: 1fr; }
+      .kapely-grid { grid-template-columns: repeat(3, 1fr); }
+      .chasa-intro { grid-template-columns: 1fr; gap: 2.5rem; }
+      .info-grid { grid-template-columns: 1fr; }
+      .info-cell { border-right: none; border-bottom: 1px solid var(--accent-border); }
+      .info-cell:last-child { border-bottom: none; }
+    }
+
+    @media (max-width: 768px) {
+      .kapely-grid { grid-template-columns: 1fr; gap: 1rem; }
+      .starka-pair { grid-template-columns: 1fr 1fr; }
+      .par { grid-template-columns: 1fr auto 1fr; }
+      .par-clen { font-size: 0.9375rem; }
+    }
+
+    /* === HERO MOBILE === */
+    @media (max-width: 640px) {
+      .hody-hero {
+        min-height: 100dvh;
+      }
+
+      .hody-hero-content {
+        padding-bottom: clamp(2.5rem, 8vw, 4rem);
+      }
+
+      /* Meta: stack date + location vertically, no divider */
+      .hody-hero-divider { display: none; }
+      .hody-hero-meta {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.75rem;
+      }
+      .hody-hero-date-block { align-items: baseline; }
+      .hody-hero-day { font-size: 2.5rem; }
+      .hody-hero-monthyear { font-size: 0.9375rem; }
+      .hody-hero-location { font-size: 0.875rem; }
+
+      /* Actions: badge full-width, pak 2×2 grid */
+      .hody-hero-actions {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0.5rem;
+        margin-top: 1.75rem;
+        align-items: start;
+      }
+      .badge-archive {
+        grid-column: 1 / -1;
+        justify-self: start;
+        margin-bottom: 0.25rem;
+      }
+      .btn-fb {
+        justify-content: center;
+        font-size: 0.775rem;
+        padding: 0.65rem 0.625rem;
+        gap: 0.375rem;
+        width: 100%;
+        text-align: center;
+      }
+      .btn-fb svg { flex-shrink: 0; width: 14px; height: 14px; }
+    }
+
+    @media (max-width: 560px) {
+      .starka-pair { grid-template-columns: 1fr; max-width: 320px; }
+      .mala-chasa-list { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ======= NAV ======= -->
+  <header class="site-header">
+    <nav class="nav-pill" id="nav">
+      <a href="/" class="nav-logo">
+        <span class="nav-logo-ornament" aria-hidden="true"></span>
+        Mackovská chasa
+      </a>
+      <ul class="nav-links" role="list">
+        <li><a href="/#hody" class="nav-link">Hody</a></li>
+        <li><a href="/#o-nas" class="nav-link">O nás</a></li>
+        <li><a href="/#clenove" class="nav-link">Členové</a></li>
+        <li><a href="/#stanovy" class="nav-link">Stanovy</a></li>
+        <li><a href="/#kontakt" class="nav-link">Kontakt</a></li>
+      </ul>
+      <a href="2026.html" class="nav-cta">
+        <span class="nav-cta-label">Hody 2026</span>
+        <span class="nav-cta-icon" aria-hidden="true">
+          <svg width="13" height="13" viewBox="0 0 15 15" fill="none">
+            <path d="M2.5 7.5h10M8 3.5l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span>
+      </a>
+      <button class="nav-hamburger" id="nav-toggle" aria-label="Otevřít menu" aria-expanded="false">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+    </nav>
+  </header>
+
+  <!-- ======= MOBILE MENU ======= -->
+  <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+    <ul class="mobile-links" role="list">
+      <li><a href="/#hody" class="mobile-link">Hody</a></li>
+      <li><a href="/#o-nas" class="mobile-link">O nás</a></li>
+      <li><a href="/#clenove" class="mobile-link">Členové</a></li>
+      <li><a href="/#stanovy" class="mobile-link">Stanovy</a></li>
+      <li><a href="/#kontakt" class="mobile-link">Kontakt</a></li>
+    </ul>
+    <p class="mobile-meta">Mackovice · Jižní Morava · z. s.</p>
+  </div>
+
+  <main>
+
+    <!-- ======= HERO ======= -->
+    <section class="hody-hero">
+
+      <div class="hody-hero-bg">
+        <img src="../img/hody2025hero.jpg" alt="Krojované hody Mackovice 2025" loading="eager">
+      </div>
+
+      <div class="hody-hero-content">
+
+        <div class="hody-hero-eyebrow" data-reveal>
+          <span class="eyebrow-dot" aria-hidden="true"></span>
+          Krojované hody · Mackovice
+        </div>
+
+        <h1 class="hody-hero-title" data-reveal data-reveal-delay="1">
+          Hody<br><em>2025</em>
+        </h1>
+
+        <div class="hody-hero-meta" data-reveal data-reveal-delay="2">
+          <div class="hody-hero-date-block">
+            <span class="hody-hero-day">26</span>
+            <span class="hody-hero-monthyear">července 2025</span>
+          </div>
+          <div class="hody-hero-divider" aria-hidden="true"></div>
+          <div class="hody-hero-location">
+            <strong>Společenský areál</strong>
+            u fotbalového hřiště Mackovice
+          </div>
+        </div>
+
+        <div class="hody-hero-actions" data-reveal data-reveal-delay="3">
+
+          <a href="https://www.facebook.com/events/698737869316614/" target="_blank" rel="noopener" class="btn-fb">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987H7.898V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"/>
+            </svg>
+            Facebook událost
+          </a>
+          <a href="https://photos.app.goo.gl/kxFrrVQPvtzR6GCDA" target="_blank" rel="noopener" class="btn-fb">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="3" y="3" width="18" height="18" rx="2.5"/>
+              <circle cx="8.5" cy="8.5" r="1.5"/>
+              <path d="M21 15l-5-5L5 21"/>
+            </svg>
+            Fotogalerie
+          </a>
+          <a href="https://youtu.be/cQCtqxr8T2U" target="_blank" rel="noopener" class="btn-fb">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M23.495 6.205a3.007 3.007 0 0 0-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 0 0 .527 6.205a31.247 31.247 0 0 0-.522 5.805 31.247 31.247 0 0 0 .522 5.783 3.007 3.007 0 0 0 2.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 0 0 2.088-2.088 31.247 31.247 0 0 0 .5-5.783 31.247 31.247 0 0 0-.5-5.805zM9.609 15.601V8.408l6.264 3.602z"/>
+            </svg>
+            Nástup malé chasy
+          </a>
+          <a href="https://youtu.be/DFfPnmGU-FA" target="_blank" rel="noopener" class="btn-fb">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M23.495 6.205a3.007 3.007 0 0 0-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 0 0 .527 6.205a31.247 31.247 0 0 0-.522 5.805 31.247 31.247 0 0 0 .522 5.783 3.007 3.007 0 0 0 2.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 0 0 2.088-2.088 31.247 31.247 0 0 0 .5-5.783 31.247 31.247 0 0 0-.5-5.805zM9.609 15.601V8.408l6.264 3.602z"/>
+            </svg>
+            Nástup velké chasy
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ======= INFO STRIP ======= -->
+    <section class="section-info">
+      <div class="container">
+        <div class="info-grid" data-reveal>
+          <div class="info-cell">
+            <span class="info-cell-label">Datum</span>
+            <span class="info-cell-value">26. července 2025</span>
+            <span class="info-cell-sub">Sobota</span>
+          </div>
+          <div class="info-cell">
+            <span class="info-cell-label">Místo</span>
+            <span class="info-cell-value">Mackovice</span>
+            <span class="info-cell-sub">Společenský areál u fotbalového hřiště</span>
+          </div>
+          <div class="info-cell">
+            <span class="info-cell-label">Vstupné</span>
+            <span class="info-cell-value">150 Kč</span>
+            <span class="info-cell-sub">Večerní zábava</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======= PROGRAM ======= -->
+    <section class="section-program" id="program">
+      <div class="container">
+        <div class="program-layout">
+
+          <div data-reveal>
+            <div class="eyebrow">
+              <span class="eyebrow-dot" aria-hidden="true"></span>
+              Program dne
+            </div>
+            <h2 class="section-title">Jak to<br><em>šlo za sebou</em></h2>
+            <p style="margin-top: 1.5rem; font-size: 0.9375rem; color: var(--text-muted); line-height: 1.8; max-width: 36ch;">
+              Sobota 26. července 2025 — celý hodový den od požehnání v kostele až po noční zábavu.
+            </p>
+          </div>
+
+          <div data-reveal data-reveal-delay="1">
+            <div class="program-list">
+              <div class="program-item">
+                <span class="program-time">9:00</span>
+                <span class="program-event">
+                  Požehnání krojované chasy
+                  <span class="program-event-note">Kostel Zasnoubení Panny Marie</span>
+                </span>
+              </div>
+              <div class="program-item">
+                <span class="program-time">9:15</span>
+                <span class="program-event">
+                  Vystoupení malé chasy
+                  <span class="program-event-note">Slavnostní předání hodového práva</span>
+                </span>
+              </div>
+              <div class="program-item">
+                <span class="program-time">9:30</span>
+                <span class="program-event">Hodový průvod vesnicí</span>
+              </div>
+              <div class="program-item">
+                <span class="program-time">15:00</span>
+                <span class="program-event">Hodové odpoledne</span>
+              </div>
+              <div class="program-item">
+                <span class="program-time">20:00</span>
+                <span class="program-event">Večerní hodová zábava</span>
+              </div>
+              <div class="program-item">
+                <span class="program-time">21:00</span>
+                <span class="program-event">
+                  Slavnostní nástup chasy
+                  <span class="program-event-note">Malá i velká krojovaná chasa</span>
+                </span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ======= KAPELY ======= -->
+    <section class="section-kapely" id="kapely">
+      <div class="container">
+
+        <div class="section-header" data-reveal>
+          <div class="eyebrow eyebrow--light">
+            <span class="eyebrow-dot" aria-hidden="true"></span>
+            Hudba
+          </div>
+          <h2 class="section-title">Vystupující<br>kapely</h2>
+        </div>
+
+        <div class="kapely-grid">
+
+          <div class="kapela-card" data-reveal data-reveal-delay="1">
+            <div class="kapela-card-inner">
+              <span class="kapela-number">01</span>
+              <span class="kapela-time">09:00 – 15:00</span>
+              <h3 class="kapela-name">TRENĎANKA</h3>
+              <p class="kapela-desc">Dechová kapela, která doprovází krojovaný průvod vesnicí.</p>
+            </div>
+          </div>
+
+          <div class="kapela-card" data-reveal data-reveal-delay="2">
+            <div class="kapela-card-inner">
+              <span class="kapela-number">02</span>
+              <span class="kapela-time">15:30 – 18:00</span>
+              <h3 class="kapela-name">Cimbálová&nbsp;muzika DENÁR</h3>
+              <p class="kapela-desc">Cimbálka, která zahraje na odpoledním programu.</p>
+            </div>
+          </div>
+
+          <div class="kapela-card" data-reveal data-reveal-delay="3">
+            <div class="kapela-card-inner">
+              <span class="kapela-number">03</span>
+              <span class="kapela-time">20:00 – 03:00</span>
+              <h3 class="kapela-name">Habakuk Band</h3>
+              <p class="kapela-desc">Kapela, která se postará o večerní hodovou zábavu.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ======= KROJOVANÁ CHASA ======= -->
+    <section class="section-chasa" id="chasa">
+      <div class="container">
+
+        <div class="chasa-intro">
+          <div data-reveal>
+            <div class="eyebrow">
+              <span class="eyebrow-dot" aria-hidden="true"></span>
+              Krojovaná chasa
+            </div>
+            <h2 class="section-title">Naša<br><em>chasa 2025</em></h2>
+          </div>
+          <div data-reveal data-reveal-delay="1" style="padding-top: 0.5rem;">
+            <p style="font-size: 0.9375rem; color: var(--text-muted); line-height: 1.8; max-width: 48ch;">
+              Tradici krojovaných hodů nesou na svých bedrech chlapci a dívky z Mackovic, oblečení v kyjovských krojích. Velká chasa tančí v párech, malá chasa přidává životní elán a radost.
+            </p>
+          </div>
+        </div>
+
+        <!-- === Hlavní stárek + stárka === -->
+        <div class="chasa-group-header" data-reveal>
+          <span class="eyebrow-dot" aria-hidden="true" style="color: var(--accent); width:5px; height:5px; background: var(--accent); border-radius:50%; display:inline-block; flex-shrink:0;"></span>
+          <h3 class="chasa-group-title">Hlavní pár</h3>
+        </div>
+
+        <div class="starka-pair" data-reveal data-reveal-delay="1">
+
+          <div class="starka-card">
+            <div class="starka-card-inner">
+              <div class="starka-photo">
+                <img src="../img/predseda.JPG" alt="Milan Hoff, hlavní stárek" loading="lazy">
+              </div>
+              <div class="starka-info">
+                <span class="starka-role">Hlavní stárek</span>
+                <span class="starka-name">Milan Hoff</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="starka-card">
+            <div class="starka-card-inner">
+              <div class="starka-photo">
+                <img src="../img/starkova25.JPG" alt="Nela Talášková, hlavní stárka" loading="lazy">
+              </div>
+              <div class="starka-info">
+                <span class="starka-role">Hlavní stárka</span>
+                <span class="starka-name">Nela Talášková</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- === Velká chasa – páry === -->
+        <div class="chasa-group-header" data-reveal>
+          <span class="eyebrow-dot" aria-hidden="true" style="color: var(--accent); width:5px; height:5px; background: var(--accent); border-radius:50%; display:inline-block; flex-shrink:0;"></span>
+          <h3 class="chasa-group-title">Velká chasa</h3>
+          <span class="chasa-group-count">11 párů</span>
+        </div>
+
+        <div class="velka-chasa-pairs" data-reveal data-reveal-delay="1">
+
+          <div class="par">
+            <span class="par-clen par-clen--sohaj">David Myška</span>
+            <span class="par-separator" aria-hidden="true">
+              <svg viewBox="0 0 16 16" fill="none"><path d="M8 13.5S2 9.8 2 5.8a3 3 0 0 1 6-0.3 3 3 0 0 1 6 0.3C14 9.8 8 13.5 8 13.5z" fill="currentColor"/></svg>
+            </span>
+            <span class="par-clen par-clen--devcica">Daniela Suchánková</span>
+          </div>
+
+          <div class="par">
+            <span class="par-clen par-clen--sohaj">Petr Kadlčík</span>
+            <span class="par-separator" aria-hidden="true">
+              <svg viewBox="0 0 16 16" fill="none"><path d="M8 13.5S2 9.8 2 5.8a3 3 0 0 1 6-0.3 3 3 0 0 1 6 0.3C14 9.8 8 13.5 8 13.5z" fill="currentColor"/></svg>
+            </span>
+            <span class="par-clen par-clen--devcica">Iveta Jandásková</span>
+          </div>
+
+          <div class="par">
+            <span class="par-clen par-clen--sohaj">Josef Vrba</span>
+            <span class="par-separator" aria-hidden="true">
+              <svg viewBox="0 0 16 16" fill="none"><path d="M8 13.5S2 9.8 2 5.8a3 3 0 0 1 6-0.3 3 3 0 0 1 6 0.3C14 9.8 8 13.5 8 13.5z" fill="currentColor"/></svg>
+            </span>
+            <span class="par-clen par-clen--devcica">Kamila Talášková</span>
+          </div>
+
+          <div class="par">
+            <span class="par-clen par-clen--sohaj">Jonáš Velička</span>
+            <span class="par-separator" aria-hidden="true">
+              <svg viewBox="0 0 16 16" fill="none"><path d="M8 13.5S2 9.8 2 5.8a3 3 0 0 1 6-0.3 3 3 0 0 1 6 0.3C14 9.8 8 13.5 8 13.5z" fill="currentColor"/></svg>
+            </span>
+            <span class="par-clen par-clen--devcica">Sabina Spěváková</span>
+          </div>
+
+          <div class="par">
+            <span class="par-clen par-clen--sohaj">David Nadymáček</span>
+            <span class="par-separator" aria-hidden="true">
+              <svg viewBox="0 0 16 16" fill="none"><path d="M8 13.5S2 9.8 2 5.8a3 3 0 0 1 6-0.3 3 3 0 0 1 6 0.3C14 9.8 8 13.5 8 13.5z" fill="currentColor"/></svg>
+            </span>
+            <span class="par-clen par-clen--devcica">Veronika Spěváková</span>
+          </div>
+
+          <div class="par">
+            <span class="par-clen par-clen--sohaj">Martin Dokoupil</span>
+            <span class="par-separator" aria-hidden="true">
+              <svg viewBox="0 0 16 16" fill="none"><path d="M8 13.5S2 9.8 2 5.8a3 3 0 0 1 6-0.3 3 3 0 0 1 6 0.3C14 9.8 8 13.5 8 13.5z" fill="currentColor"/></svg>
+            </span>
+            <span class="par-clen par-clen--devcica">Bára Podaná</span>
+          </div>
+
+          <div class="par">
+            <span class="par-clen par-clen--sohaj">Denis Gabrhel</span>
+            <span class="par-separator" aria-hidden="true">
+              <svg viewBox="0 0 16 16" fill="none"><path d="M8 13.5S2 9.8 2 5.8a3 3 0 0 1 6-0.3 3 3 0 0 1 6 0.3C14 9.8 8 13.5 8 13.5z" fill="currentColor"/></svg>
+            </span>
+            <span class="par-clen par-clen--devcica">Hana Talášková</span>
+          </div>
+
+          <div class="par">
+            <span class="par-clen par-clen--sohaj">Daniel Fic</span>
+            <span class="par-separator" aria-hidden="true">
+              <svg viewBox="0 0 16 16" fill="none"><path d="M8 13.5S2 9.8 2 5.8a3 3 0 0 1 6-0.3 3 3 0 0 1 6 0.3C14 9.8 8 13.5 8 13.5z" fill="currentColor"/></svg>
+            </span>
+            <span class="par-clen par-clen--devcica">Tereza Macháčková</span>
+          </div>
+
+          <div class="par">
+            <span class="par-clen par-clen--sohaj">Samuel Zelníček</span>
+            <span class="par-separator" aria-hidden="true">
+              <svg viewBox="0 0 16 16" fill="none"><path d="M8 13.5S2 9.8 2 5.8a3 3 0 0 1 6-0.3 3 3 0 0 1 6 0.3C14 9.8 8 13.5 8 13.5z" fill="currentColor"/></svg>
+            </span>
+            <span class="par-clen par-clen--devcica">Kateřina Šumichrástová</span>
+          </div>
+
+          <div class="par">
+            <span class="par-clen par-clen--sohaj">Jindřich Kročil</span>
+            <span class="par-separator" aria-hidden="true">
+              <svg viewBox="0 0 16 16" fill="none"><path d="M8 13.5S2 9.8 2 5.8a3 3 0 0 1 6-0.3 3 3 0 0 1 6 0.3C14 9.8 8 13.5 8 13.5z" fill="currentColor"/></svg>
+            </span>
+            <span class="par-clen par-clen--devcica">Bára Hoffová</span>
+          </div>
+
+          <div class="par">
+            <span class="par-clen par-clen--sohaj">Christian Andrýsek</span>
+            <span class="par-separator" aria-hidden="true">
+              <svg viewBox="0 0 16 16" fill="none"><path d="M8 13.5S2 9.8 2 5.8a3 3 0 0 1 6-0.3 3 3 0 0 1 6 0.3C14 9.8 8 13.5 8 13.5z" fill="currentColor"/></svg>
+            </span>
+            <span class="par-clen par-clen--devcica">Vendula Zvonková</span>
+          </div>
+
+        </div>
+
+        <!-- === Malá chasa === -->
+        <div class="chasa-group-header" data-reveal>
+          <span class="eyebrow-dot" aria-hidden="true" style="color: var(--accent); width:5px; height:5px; background: var(--accent); border-radius:50%; display:inline-block; flex-shrink:0;"></span>
+          <h3 class="chasa-group-title">Malá chasa</h3>
+        </div>
+
+        <div class="mala-chasa-list" data-reveal data-reveal-delay="1">
+          <span class="mala-chasa-clen">Natálie Kamluková</span>
+          <span class="mala-chasa-clen">Viktorie Andrýsková</span>
+          <span class="mala-chasa-clen">Gábina Andrýsková</span>
+          <span class="mala-chasa-clen">Tomáš Kamluk</span>
+          <span class="mala-chasa-clen">Denisa Talášková</span>
+          <span class="mala-chasa-clen">Viktorie Gabrhelová</span>
+          <span class="mala-chasa-clen">Pavel Režňák</span>
+          <span class="mala-chasa-clen">Zuzana Režňáková</span>
+          <span class="mala-chasa-clen">Michal Andrýsek</span>
+          <span class="mala-chasa-clen">Anita Sojková</span>
+          <span class="mala-chasa-clen">Karin Talášková</span>
+          <span class="mala-chasa-clen">Sára Zelníčková</span>
+          <span class="mala-chasa-clen">Amálie Hošková</span>
+          <span class="mala-chasa-clen">Amálie Macejíková</span>
+          <span class="mala-chasa-clen">Tadeáš Macejík</span>
+          <span class="mala-chasa-clen">Martin Kohoutek</span>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ======= SPONZOŘI ======= -->
+    <section class="section-sponzori" id="sponzori">
+      <div class="container">
+
+        <div class="sponzori-header" data-reveal>
+          <div class="eyebrow">
+            <span class="eyebrow-dot" aria-hidden="true"></span>
+            Sponzoři
+          </div>
+          <h2 class="section-title">Díky těm,<br><em>kdo nás podporovali</em></h2>
+        </div>
+
+        <div class="sponzori-grid">
+
+          <a href="https://www.mobilheimy.eu/" class="sponzor-card sponzor-card--hlavni" target="_blank" rel="noopener" data-reveal data-reveal-delay="1">
+            <div class="sponzor-card-inner">
+              <span class="sponzor-badge-hlavni">Hlavní sponzor</span>
+              <span class="sponzor-name">Mobilheimy.eu</span>
+              <span class="sponzor-url">
+                <svg width="11" height="11" viewBox="0 0 15 15" fill="none" aria-hidden="true">
+                  <path d="M3 7.5h9M8.5 3.5l4 4-4 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                mobilheimy.eu
+              </span>
+            </div>
+          </a>
+
+          <a href="https://evalue.cz/" class="sponzor-card" target="_blank" rel="noopener" data-reveal data-reveal-delay="2">
+            <div class="sponzor-card-inner">
+              <span class="sponzor-name">eValue.cz s.r.o.</span>
+              <span class="sponzor-url">
+                <svg width="11" height="11" viewBox="0 0 15 15" fill="none" aria-hidden="true">
+                  <path d="M3 7.5h9M8.5 3.5l4 4-4 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                evalue.cz
+              </span>
+            </div>
+          </a>
+
+          <a href="https://zdenekpodany.cz" class="sponzor-card" target="_blank" rel="noopener" data-reveal data-reveal-delay="3">
+            <div class="sponzor-card-inner">
+              <span class="sponzor-name">Zdeněk Podaný<br>Webovky Jednoduše</span>
+              <span class="sponzor-url">
+                <svg width="11" height="11" viewBox="0 0 15 15" fill="none" aria-hidden="true">
+                  <path d="M3 7.5h9M8.5 3.5l4 4-4 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                zdenekpodany.cz
+              </span>
+            </div>
+          </a>
+
+          <div class="sponzor-card" data-reveal data-reveal-delay="4">
+            <div class="sponzor-card-inner">
+              <span class="sponzor-name">TAXI Dokoupil</span>
+            </div>
+          </div>
+
+          <a href="https://travniksesrdcem.cz/" class="sponzor-card" target="_blank" rel="noopener" data-reveal data-reveal-delay="1">
+            <div class="sponzor-card-inner">
+              <span class="sponzor-name">Trávník se srdcem</span>
+              <span class="sponzor-url">
+                <svg width="11" height="11" viewBox="0 0 15 15" fill="none" aria-hidden="true">
+                  <path d="M3 7.5h9M8.5 3.5l4 4-4 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                travniksesrdcem.cz
+              </span>
+            </div>
+          </a>
+
+          <a href="https://www.instagram.com/lrstrechy" target="_blank" rel="noopener" class="sponzor-card" data-reveal data-reveal-delay="2">
+            <div class="sponzor-card-inner">
+              <span class="sponzor-name">Střechy Urbánek</span>
+              <span class="sponzor-url">
+                <svg width="11" height="11" viewBox="0 0 15 15" fill="none" aria-hidden="true">
+                  <path d="M3 7.5h9M8.5 3.5l4 4-4 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                instagram.com/lrstrechy
+              </span>
+            </div>
+          </a>
+
+          <a href="http://hevmont.cz/" class="sponzor-card" target="_blank" rel="noopener" data-reveal data-reveal-delay="3">
+            <div class="sponzor-card-inner">
+              <span class="sponzor-name">Hevmont.cz</span>
+              <span class="sponzor-url">
+                <svg width="11" height="11" viewBox="0 0 15 15" fill="none" aria-hidden="true">
+                  <path d="M3 7.5h9M8.5 3.5l4 4-4 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                hevmont.cz
+              </span>
+            </div>
+          </a>
+
+          <div class="sponzor-card" data-reveal data-reveal-delay="4">
+            <div class="sponzor-card-inner">
+              <span class="sponzor-name">Manželé Hoffovi</span>
+            </div>
+          </div>
+
+        </div>
+
+        <p class="sponzori-note" data-reveal>
+          Zájem o sponzorství pro příští hody? Napište nám na <a href="mailto:mackovskachasa@gmail.com" style="color: var(--accent);">mackovskachasa@gmail.com</a>.
+        </p>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ======= FOOTER ======= -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <span class="footer-logo">Mackovská chasa z.&nbsp;s.</span>
+          <p class="footer-tagline">Krojované hody · Mackovice · Jižní Morava</p>
+        </div>
+        <nav class="footer-nav" aria-label="Footer navigace">
+          <a href="/#hody">Hody</a>
+          <a href="/#o-nas">O nás</a>
+          <a href="/#clenove">Členové</a>
+          <a href="/#stanovy">Stanovy</a>
+          <a href="/#kontakt">Kontakt</a>
+        </nav>
+        <p class="footer-copy">© 2026 Mackovská chasa z.&nbsp;s.</p>
+      </div>
+      <div class="footer-meta">
+        <div class="footer-meta-left">
+          <span>IČO: <a href="https://ares.gov.cz/ekonomicke-subjekty/res/23022612" target="_blank" rel="noopener">23022612</a></span>
+          <span><a href="https://verejnerejstriky.msp.gov.cz/vypis/1271665" target="_blank" rel="noopener">Spolek zapsaný v&nbsp;rejstříku spolků</a></span>
+          <span>Bankovní účet: 6803739359/0800</span>
+        </div>
+        <div class="footer-meta-right">
+          <a href="https://www.facebook.com/profile.php?id=61574904335853" target="_blank" rel="noopener" class="footer-fb" aria-label="Facebook">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987H7.898V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.62 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"/>
+            </svg>
+            Facebook
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../main.js"></script>
+</body>
+</html>

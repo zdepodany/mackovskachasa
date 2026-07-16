@@ -1,430 +1,515 @@
 <!DOCTYPE html>
 <html lang="cs">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mackovská chasa z.s.</title>
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-R7BNDE7ERF"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-R7BNDE7ERF', {
-            'analytics_storage': 'denied'
-        });
-    </script>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/cookie-consent.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mackovská chasa z. s. — Krojované hody v Mackovicích</title>
+  <meta name="description" content="Mackovská chasa z. s. je spolek z Mackovic na Jižní Moravě, pořádající tradiční krojované hody.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <nav class="navbar">
-        <div class="container">
-            <div class="logo-container">
-                <a href="index.html">
-                    <img src="img/mackovskachasa_logo.svg" alt="Logo Mackovská chasa z.s." class="logo">
-                </a>
-                <h1><a href="index.html">Mackovská chasa z.s.</a></h1>
-            </div>
-            <button class="hamburger" aria-label="Menu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-            <ul class="nav-links">
-                <li><a href="#domu">Domů</a></li>
-                <li><a href="#o-nas">O nás</a></li>
-                <li><a href="#stanovy">Stanovy</a></li>
-                <li><a href="hody.html">Hody 2025</a></li>
-                <li><a href="#kontakt">Kontakt</a></li>
-            </ul>
-        </div>
-    </nav>
 
-    <section class="hero" id="domu">
-        <div class="container">
-            <div class="hero-content">
-                <img src="img/mackovskachasa_logo.svg" alt="Logo Mackovská chasa z.s." class="hero-logo">
-                <h2>Mackovská chasa z.s.</h2>
-                <p>Spolek pro zachování a propagaci lidových tradic a kultury v obci Mackovice</p>
-                <a href="hody.html" class="button button-primary">Krojované hody 2025 <i class="fas fa-chevron-right"></i></a>
-            </div>
+  <!-- ======= NAV ======= -->
+  <header class="site-header">
+    <nav class="nav-pill" id="nav">
+      <a href="/" class="nav-logo">
+        <span class="nav-logo-ornament" aria-hidden="true"></span>
+        Mackovská chasa
+      </a>
+      <ul class="nav-links" role="list">
+        <li><a href="#hody" class="nav-link">Hody</a></li>
+        <li><a href="#o-nas" class="nav-link">O nás</a></li>
+        <li><a href="#clenove" class="nav-link">Členové</a></li>
+        <li><a href="#stanovy" class="nav-link">Stanovy</a></li>
+        <li><a href="#kontakt" class="nav-link">Kontakt</a></li>
+      </ul>
+      <a href="hody/2026.html" class="nav-cta">
+        <span class="nav-cta-label">Hody 2026</span>
+        <span class="nav-cta-icon" aria-hidden="true">
+          <svg width="13" height="13" viewBox="0 0 15 15" fill="none">
+            <path d="M2.5 7.5h10M8 3.5l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span>
+      </a>
+      <button class="nav-hamburger" id="nav-toggle" aria-label="Otevřít menu" aria-expanded="false">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+    </nav>
+  </header>
+
+  <!-- ======= MOBILE MENU ======= -->
+  <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+    <ul class="mobile-links" role="list">
+      <li><a href="#hody" class="mobile-link">Hody</a></li>
+      <li><a href="#o-nas" class="mobile-link">O nás</a></li>
+      <li><a href="#clenove" class="mobile-link">Členové</a></li>
+      <li><a href="#stanovy" class="mobile-link">Stanovy</a></li>
+      <li><a href="#kontakt" class="mobile-link">Kontakt</a></li>
+    </ul>
+    <a href="hody/2026.html" class="mobile-cta">
+      <span>Hody 2026</span>
+      <span class="nav-cta-icon" aria-hidden="true">
+        <svg width="14" height="14" viewBox="0 0 15 15" fill="none">
+          <path d="M2.5 7.5h10M8 3.5l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </span>
+    </a>
+    <p class="mobile-meta">Mackovice · Jižní Morava · z. s.</p>
+  </div>
+
+  <main>
+
+    <!-- ======= HERO ======= -->
+    <section class="hero">
+      <div class="hero-inner">
+
+        <div class="hero-left">
+          <div class="eyebrow" data-reveal>
+            <span class="eyebrow-dot" aria-hidden="true"></span>
+            Mackovice · Jižní Morava · z.&nbsp;s.
+          </div>
+
+          <h1 class="hero-title">
+            <span class="hero-title-line" data-reveal data-reveal-delay="1">Mackovská</span>
+            <span class="hero-title-line hero-title-italic" data-reveal data-reveal-delay="2">chasa</span>
+          </h1>
+
+          <p class="hero-sub" data-reveal data-reveal-delay="3">
+            Udržujeme tradice krojovaných hodů<br>v srdci Jižní Moravy.
+          </p>
+
+          <div class="hero-cta" data-reveal data-reveal-delay="4">
+            <a href="#hody" class="btn-primary">
+              <span class="btn-label">Nadcházející hody</span>
+              <span class="btn-icon-wrap" aria-hidden="true">
+                <svg width="15" height="15" viewBox="0 0 15 15" fill="none">
+                  <path d="M2.5 7.5h10M8 3.5l4 4-4 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+            </a>
+            <a href="#o-nas" class="btn-ghost">O spolku</a>
+          </div>
         </div>
+
+        <div class="hero-right" data-reveal data-reveal-delay="2">
+          <div class="hero-bezel-outer">
+            <div class="hero-bezel-inner">
+              <img
+                src="img/hody25bg.webp"
+                alt="Krojované hody v Mackovicích"
+                class="hero-img"
+                loading="eager"
+              >
+              <div class="hero-img-overlay" aria-hidden="true"></div>
+            </div>
+          </div>
+
+          <div class="hero-badge" aria-hidden="true">
+            <svg class="hero-badge-svg" viewBox="0 0 140 140" fill="none">
+              <circle cx="70" cy="70" r="64" stroke="currentColor" stroke-width="0.75" stroke-dasharray="3.5 4"/>
+              <text font-family="'Cormorant Garamond', serif" font-size="11.5" fill="currentColor" letter-spacing="3.5" text-anchor="middle">
+                <textPath href="#badge-circle">KROJOVANÉ HODY · MACKOVICE ·</textPath>
+              </text>
+              <defs>
+                <path id="badge-circle" d="M70,12 a58,58 0 1,1 -0.1,0"/>
+              </defs>
+              <circle cx="70" cy="70" r="16" stroke="currentColor" stroke-width="0.75"/>
+            </svg>
+            <span class="hero-badge-year">z. s.</span>
+          </div>
+
+          <svg class="hero-ornament" viewBox="0 0 100 100" fill="none" aria-hidden="true">
+            <circle cx="50" cy="50" r="46" stroke="currentColor" stroke-width="0.6" stroke-dasharray="2 3.5"/>
+            <circle cx="50" cy="50" r="5" fill="currentColor"/>
+            <path d="M50 45 C47 36 40 32 50 22 C60 32 53 36 50 45Z" fill="currentColor" opacity="0.55"/>
+            <path d="M50 55 C53 64 60 68 50 78 C40 68 47 64 50 55Z" fill="currentColor" opacity="0.55"/>
+            <path d="M45 50 C36 47 32 40 22 50 C32 60 36 53 45 50Z" fill="currentColor" opacity="0.55"/>
+            <path d="M55 50 C64 53 68 60 78 50 C68 40 64 47 55 50Z" fill="currentColor" opacity="0.55"/>
+            <path d="M47 47 C40 35 30 34 32 24 C42 26 41 36 47 47Z" fill="currentColor" opacity="0.35"/>
+            <path d="M53 47 C60 35 70 34 68 24 C58 26 59 36 53 47Z" fill="currentColor" opacity="0.35"/>
+            <path d="M47 53 C40 65 30 66 32 76 C42 74 41 64 47 53Z" fill="currentColor" opacity="0.35"/>
+            <path d="M53 53 C60 65 70 66 68 76 C58 74 59 64 53 53Z" fill="currentColor" opacity="0.35"/>
+          </svg>
+        </div>
+
+      </div>
+
+      <div class="hero-scroll" aria-hidden="true">
+        <div class="hero-scroll-line"></div>
+        <span class="hero-scroll-label">Srolovat</span>
+      </div>
     </section>
 
-    <main>
-        <section id="o-nas" class="section">
-            <div class="container">
-                <h2>Naše poslání</h2>
-                <p>Hlavním cílem našeho spolku je zachování a rozvoj kulturního dědictví
-                   obce Mackovice, zejména prostřednictvím organizace tradičních
-                   krojovaných hodů a dalších folklórních akcí.</p>
-            </div>
-        </section>
+    <!-- ======= HODY ======= -->
+    <section class="section-hody" id="hody">
+      <div class="container">
 
-        <section id="výbor" class="section section-alt">
-            <div class="container">
-                <h2>Výbor spolku</h2>
-                <div class="committee-description">
-                    <p>Výbor spolku je statutárním orgánem Mackovské chasy z.s. Členové výboru jsou voleni členskou schůzí na funkční období pěti let.</p>
-                </div>
-                <div class="committee-grid">
-                    <div class="committee-member">
-                        <div class="member-icon">
-                            <i class="fas fa-user-tie"></i>
-                        </div>
-                        <h4>Předseda</h4>
-                        <p>Zdeněk Podaný</p>
-                        <p class="member-contact"><i class="fas fa-envelope"></i> <a href="mailto:zdepodany@gmail.com">zdepodany@gmail.com</a></p>
-                    </div>
-                    <div class="committee-member">
-                        <div class="member-icon">
-                            <i class="fas fa-user-shield"></i>
-                        </div>
-                        <h4>Místopředseda</h4>
-                        <p>Milan Hoff</p>
-                        <p class="member-contact"><i class="fas fa-phone"></i> <a href="tel:+420720221247">+420 720 221 247</a></p>
-                    </div>
-                    <div class="committee-member">
-                        <div class="member-icon">
-                            <i class="fas fa-wallet"></i>
-                        </div>
-                        <h4>Pokladník</h4>
-                        <p>Martin Dokoupil</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="stanovy" class="section">
-            <div class="container">
-                <h2>Stanovy spolku</h2>
-                <div class="statutes-container">
-                    <div class="statute-section">
-                        <button class="accordion">Článek 1 - Základní ustanovení</button>
-                        <div class="accordion-content">
-                            <p><strong>Název spolku:</strong> Mackovská chasa z. s.</p>
-                            <p><strong>Sídlo spolku:</strong> Mackovice 23, 671 78</p>
-                        </div>
-                    </div>
-                    <div class="statute-section">
-                        <button class="accordion">Článek 2 - Účel spolku</button>
-                        <div class="accordion-content">
-                            <ul>
-                                <li>Podpora a rozvoj tradičních lidových zvyků v obci Mackovice a okolí, zejména krojovaných hodů.</li>
-                                <li>Zapojení mladých lidí do kulturního a společenského života prostřednictvím účasti na pořádání tradičních akcí.</li>
-                                <li>Organizace a koordinace krojovaných hodů a dalších folklórních a kulturních aktivit, které podporují místní tradice a posilují komunitní vazby.</li>
-                                <li>Spolupráce s místními spolky, obcí a dalšími organizacemi na zachování a propagaci kulturního dědictví.</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="statute-section">
-                        <button class="accordion">Článek 3 - Členství</button>
-                        <div class="accordion-content">
-                            <h4>Vznik členství</h4>
-                            <ul>
-                                <li>O přijetí nových členů rozhoduje členská schůze hlasováním na základě podané přihlášky.</li>
-                            </ul>
-                            
-                            <h4>Zánik členství</h4>
-                            <ul>
-                                <li>Členství zaniká na základě písemného oznámení člena o jeho vystoupení ze spolku.</li>
-                                <li>Člen může být vyloučen rozhodnutím členské schůze, pokud závažně porušuje stanovy nebo jedná v rozporu s cíli spolku.</li>
-                                <li>Členství automaticky zaniká, pokud člen nezaplatí členské příspěvky po dobu delší než 12 měsíců.</li>
-                                <li>U fyzické osoby členství zaniká jejím úmrtím.</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="statute-section">
-                        <button class="accordion">Článek 4 - Práva a povinnosti členů</button>
-                        <div class="accordion-content">
-                            <h4>Práva členů spolku</h4>
-                            <ul>
-                                <li>Členové mají právo účastnit se všech schůzí, akcí a projektů organizovaných spolkem.</li>
-                                <li>Členové mají právo hlasovat o důležitých záležitostech na členské schůzi, včetně voleb do orgánů spolku a změn stanov.</li>
-                                <li>Členové mají právo navrhovat nové aktivity, akce nebo změny týkající se činnosti spolku.</li>
-                                <li>Členové mají právo být pravidelně informováni o hospodaření spolku a jeho aktivitách.</li>
-                                <li>Každý člen má právo kdykoliv ukončit své členství oznámením o vystoupení.</li>
-                            </ul>
-                            
-                            <h4>Povinnosti členů spolku</h4>
-                            <ul>
-                                <li>Členové jsou povinni řídit se stanovami spolku a respektovat rozhodnutí členské schůze.</li>
-                                <li>Členové jsou povinni přispívat členským příspěvkem ve výši 1000 Kč jednou za dvanáct měsíců.</li>
-                                <li>Členové jsou povinni aktivně se podílet na činnosti spolku, například pomáhat při organizaci akcí.</li>
-                                <li>Členové jsou povinni jednat v souladu s cíli spolku a nepoškozovat jeho dobré jméno svým chováním nebo jednáním.</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="statute-section">
-                        <button class="accordion">Článek 5 - Orgány spolku</button>
-                        <div class="accordion-content">
-                            <h4>Statutární orgán</h4>
-                            <ul>
-                                <li>Statutárním orgánem spolku je výbor spolku, který se skládá z předsedy, místopředsedy a pokladníka.</li>
-                                <li>Členové výboru jsou voleni členskou schůzí na funkční období pět let.</li>
-                                <li>Každý člen výboru je oprávněn jednat jménem spolku samostatně.</li>
-                                <li>Výbor rozhoduje o všech záležitostech spolku, které nespadají do působnosti členské schůze.</li>
-                            </ul>
-                            
-                            <h4>Výbor spolku</h4>
-                            <ol>
-                                <li><strong>Složení výboru:</strong>
-                                    <ul>
-                                        <li>Výbor spolku je kolektivní statutární orgán, který se skládá z:
-                                            <ul>
-                                                <li>Předsedy,</li>
-                                                <li>Místopředsedy,</li>
-                                                <li>Pokladníka</li>
-                                            </ul>
-                                        </li>
-                                        <li>Funkční období členů výboru je 5 let.</li>
-                                    </ul>
-                                </li>
-                                <li>Členové výboru jsou volení členskou schůzí na jedno funkční období (5 let).</li>
-                                <li><strong>Funkce jednotlivých členů výboru jsou:</strong>
-                                    <ul>
-                                        <li>Předseda: Svolává a řídí členské schůze, zastupuje spolek navenek, podepisuje jménem spolku důležité dokumenty.</li>
-                                        <li>Místopředseda: Zastupuje předsedu v jeho nepřítomnosti a pomáhá mu s plněním jeho úkolů.</li>
-                                        <li>Pokladník: Spravuje finance spolku, vede evidenci příjmů a výdajů, připravuje zprávy o hospodaření, může na základě dohody s výborem delegovat některé své povinnosti na jiného člena výboru, přičemž za celkové hospodaření spolku nadále zůstává odpovědný.</li>
-                                    </ul>
-                                </li>
-                                <li><strong>Pravomoci výboru:</strong>
-                                    <ul>
-                                        <li>Výbor spolku je odpovědný za řízení činnosti spolku, rozhodování o jeho záležitostech a zastupování spolku navenek.</li>
-                                        <li>Výbor rozhoduje o:
-                                            <ul>
-                                                <li>Realizaci aktivit a projektů spolku,</li>
-                                                <li>Hospodaření spolku včetně rozdělování finančních prostředků,</li>
-                                                <li>Přijímání nových členů.</li>
-                                            </ul>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li><strong>Jednání jménem spolku:</strong>
-                                    <ul>
-                                        <li>Každý člen výboru je oprávněn jednat jménem spolku samostatně.</li>
-                                        <li>Výbor však může ve stanovách nebo vnitřních předpisech určit, že některé záležitosti vyžadují souhlas více členů výboru (např. finanční transakce nad určitou částku).</li>
-                                    </ul>
-                                </li>
-                                <li><strong>Schůze výboru:</strong>
-                                    <ul>
-                                        <li>Výbor se schází podle potřeby, nejméně však jednou za 6 měsíců.</li>
-                                        <li>Schůzi výboru svolává předseda, nebo v jeho nepřítomnosti místopředseda.</li>
-                                        <li>Výbor je usnášeníschopný, pokud je přítomná nadpoloviční většina jeho členů.</li>
-                                        <li>Rozhodnutí výboru jsou přijímána většinou hlasů přítomných členů. Při rovnosti hlasů rozhoduje hlas předsedy.</li>
-                                    </ul>
-                                </li>
-                                <li><strong>Odpovědnost členů výboru:</strong>
-                                    <ul>
-                                        <li>Členové výboru odpovídají za správné hospodaření spolku a za plnění cílů stanovených členskou schůzí.</li>
-                                        <li>Členové výboru vykonávají své funkce bez nároku na odměnu, pokud členská schůze nerozhodne jinak.</li>
-                                    </ul>
-                                </li>
-                                <li><strong>Odvolání členů výboru:</strong>
-                                    <ul>
-                                        <li>Člen výboru může být odvolán členskou schůzí, pokud závažně poruší stanovy, nebo jedná v rozporu se zájmy spolku.</li>
-                                        <li>Člen výboru může také odstoupit, přičemž tuto skutečnost písemně oznámí členské schůzi.</li>
-                                    </ul>
-                                </li>
-                            </ol>
-                            
-                            <h4>Členská schůze</h4>
-                            <ol>
-                                <li><strong>Postavení členské schůze:</strong>
-                                    <ul>
-                                        <li>Členská schůze je nejvyšším orgánem spolku a rozhoduje o všech zásadních otázkách týkajících se činnosti spolku.</li>
-                                    </ul>
-                                </li>
-                                <li><strong>Pravomoci členské schůze</strong>
-                                    <ul>
-                                        <li>Schvalování stanov a jejich změn.</li>
-                                        <li>Volba a odvolávání členů výboru.</li>
-                                        <li>Schvalování hospodářských výsledků a zpráv o činnosti spolku.</li>
-                                        <li>Rozhodování o výši členských příspěvků.</li>
-                                        <li>Rozhodnutí o zrušení spolku nebo jeho sloučení s jiným spolkem.</li>
-                                    </ul>
-                                </li>
-                                <li><strong>Svolávání členské schůze</strong>
-                                    <ul>
-                                        <li>Členskou schůzi svolává výbor spolku podle potřeby, nejméně však jednou ročně.</li>
-                                        <li>Mimořádnou členskou schůzi lze svolat, pokud o to požádá alespoň jedna třetina členů spolku.</li>
-                                    </ul>
-                                </li>
-                                <li><strong>Usnášeníschopnost</strong>
-                                    <ul>
-                                        <li>Členská schůze je usnášeníschopná, pokud je přítomna nadpoloviční většina členů spolku.</li>
-                                        <li>Rozhodnutí členské schůze se přijímají většinou hlasů přítomných členů, pokud stanovy nestanoví jinak.</li>
-                                    </ul>
-                                </li>
-                                <li><strong>Zápis z jednání</strong>
-                                    <ul>
-                                        <li>O průběhu členské schůze se pořizuje zápis, který podepisuje předseda a zapisovatel. Zápis musí obsahovat přijatá usnesení a výsledky hlasování.</li>
-                                    </ul>
-                                </li>
-                            </ol>
-                        </div>
-                    </div>
-                    <div class="statute-section">
-                        <button class="accordion">Článek 6 - Hospodaření spolku</button>
-                        <div class="accordion-content">
-                            <h4>Zásady hospodaření spolku</h4>
-                            <ul>
-                                <li>Spolek hospodaří s příjmy z členských příspěvků, darů, dotací, sponzorských příspěvků a výnosů z činnosti spolku.</li>
-                                <li>Příspěvky zakladatelů a členů, vložené za účelem pořádání konkrétních akcí, mohou být na základě rozhodnutí členské schůze vráceny z přebytků akce, pokud to umožňuje hospodářský výsledek.</li>
-                                <li>Čistý zisk z akcí pořádaných spolkem bude přednostně využit na vrácení prokazatelných nákladů členů spojených s pořádáním akce, přičemž případný přebytek bude ponechán na účtu spolku pro další činnost.</li>
-                                <li>Hospodaření spolku podléhá schválení členské schůze, která schvaluje roční zprávu o hospodaření.</li>
-                                <li>Přebytky po pokrytí všech nákladů akcí jsou určeny výhradně k financování dalších aktivit spolku.</li>
-                                <li>Spolek není zřízen za účelem zisku, přičemž vrácení vkladů členům odpovídá jejich přímým nákladům na konkrétní akci.</li>
-                                <li>Spolek může vykonávat vedlejší hospodářskou činnost spočívající v pořádání kulturních, společenských a jiných akcí, v rámci nichž může provozovat prodej vstupenek, občerstvení a jiného zboží za účelem podpory své hlavní činnosti. Zisk z této činnosti bude využit výhradně k financování spolkových aktivit, na rozvoj spolku a zlepšení jeho materiálního zázemí, a to vždy v souladu s jeho účelem.</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="statute-section">
-                        <button class="accordion">Článek 7 - Závěrečná ustanovení</button>
-                        <div class="accordion-content">
-                            <h4>Zánik spolku</h4>
-                            <ol>
-                                <li>Spolek zaniká
-                                    <ul>
-                                        <li>Rozhodnutím členské schůze o jeho zrušení, přičemž toto rozhodnutí musí být přijato alespoň dvoutřetinovou většinou všech přítomných členů.</li>
-                                        <li>Sloučením s jiným spolkem na základě rozhodnutí členské schůze.</li>
-                                        <li>Rozhodnutím soudu v případech stanovených zákonem.</li>
-                                    </ul>
-                                </li>
-                                <li>Při zániku spolku se provede jeho likvidace, pokud majetek spolku nepřechází na právního nástupce.</li>
-                                <li>Likvidátora jmenuje členská schůze. Likvidátor odpovídá za vypořádání všech závazků spolku a naložení se zbylým majetkem v souladu s účelem spolku.</li>
-                                <li>Zbylý majetek spolku po vypořádání všech závazků bude použit výhradně na neziskové účely, a to:
-                                    <ul>
-                                        <li>Převodem na jiný spolek nebo organizaci s podobným účelem,</li>
-                                        <li>Nebo poskytnutím obci Mackovice pro podporu kulturních aktivit.</li>
-                                    </ul>
-                                </li>
-                            </ol>
-                        </div>
-                    </div>
-                </div>
-                <div class="button-container">
-                    <a href="docs/V2 - Stanovy - Mackovská chasa zs.pdf" class="button" target="_blank">Stáhnout PDF verzi stanov</a>
-                </div>
-            </div>
-        </section>
-
-        <section id="kontakt" class="section section-alt">
-            <div class="container">
-                <h2>Kontakt</h2>
-                <div class="contact-grid">
-                    <div class="contact-info">
-                        <h3>Mackovská chasa z.s.</h3>
-                        <div class="contact-details">
-                            <div class="contact-item">
-                                <i class="fas fa-map-marker-alt"></i>
-                                <div>
-                                    <p>Mackovice 23</p>
-                                    <p>671 78 Jiřice u Miroslavi</p>
-                                </div>
-                            </div>
-                            <div class="contact-item">
-                                <i class="fas fa-id-card"></i>
-                                <div>
-                                    <p>IČO: 23022612</p>
-                                </div>
-                            </div>
-                            <div class="contact-item">
-                                <i class="fas fa-user-tie"></i>
-                                <div>
-                                    <p>Zastupující osoba: Zdeněk Podaný (předseda spolku)</p>
-                                </div>
-                            </div>
-                            <div class="contact-item">
-                                <i class="fas fa-envelope"></i>
-                                <div>
-                                    <p>ID datové schránky: ghfvwwd</p>
-                                </div>
-                            </div>
-                            <div class="contact-item">
-                                <i class="fas fa-university"></i>
-                                <div>
-                                    <p>Bankovní účet: 6803739359/0800</p>
-                                </div>
-                            </div>
-                            <div class="contact-item">
-                                <i class="fas fa-file-alt"></i>
-                                <div>
-                                    <p><a href="https://or.justice.cz/ias/ui/rejstrik-firma.vysledky?subjektId=1271665&typ=UPLNY" target="_blank" rel="noopener noreferrer">Výpis v rejstříku spolků</a></p>
-                                </div>
-                            </div>
-                            <div class="contact-item">
-                                <i class="fab fa-facebook"></i>
-                                <div>
-                                    <p><a href="https://www.facebook.com/profile.php?id=61574904335853" target="_blank" rel="noopener noreferrer">Facebook</a></p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="contact-info">
-                        <h3>Obec Mackovice</h3>
-                        <div class="contact-details">
-                            <div class="contact-item">
-                                <i class="fas fa-building"></i>
-                                <div>
-                                    <p>Obecní úřad Mackovice</p>
-                                    <p>Mackovice 49</p>
-                                    <p>671 78 Jiřice u Miroslavi</p>
-                                </div>
-                            </div>
-                            <div class="contact-item">
-                                <i class="fas fa-phone"></i>
-                                <div>
-                                    <p><a href="tel:+420515277114">+420 515 277 114</a></p>
-                                </div>
-                            </div>
-                            <div class="contact-item">
-                                <i class="fas fa-envelope"></i>
-                                <div>
-                                    <p><a href="mailto:obec@mackovice.cz">obec@mackovice.cz</a></p>
-                                </div>
-                            </div>
-                            <div class="contact-item">
-                                <i class="fas fa-globe"></i>
-                                <div>
-                                    <p><a href="https://www.mackovice.cz" target="_blank" rel="noopener noreferrer">www.mackovice.cz</a></p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <img src="img/mackovskachasa_logo.svg" alt="Logo Mackovská chasa z.s." class="footer-logo">
-                <p>&copy; <span id="year"></span> Mackovská chasa z.s. Všechna práva vyhrazena.</p>
-                <p class="footer-credit">Web vytvořen od <a href="https://zdenekpodany.cz" target="_blank" rel="noopener noreferrer">Weby Zdeněk Podaný</a></p>
-            </div>
+        <div class="section-header" data-reveal>
+          <div class="eyebrow eyebrow--light">
+            <span class="eyebrow-dot" aria-hidden="true"></span>
+            Hody
+          </div>
+          <h2 class="section-title">Naše akce</h2>
         </div>
-    </footer>
 
-    <div class="cookie-consent">
-        <div class="cookie-consent-content">
-            <div class="cookie-consent-text">
-                <p>Tento web používá cookies pro analýzu návštěvnosti. Kliknutím na "Přijmout" souhlasíte s jejich použitím. Více informací najdete v našich <a href="#" style="color: #4CAF50;">zásadách ochrany osobních údajů</a>.</p>
+        <!-- Featured upcoming event -->
+        <div class="hody-featured" data-reveal data-reveal-delay="1">
+          <div class="hody-featured-left">
+            <div class="hody-date">
+              <span class="hody-day">25</span>
+              <span class="hody-monthyear">července 2026</span>
             </div>
-            <div class="cookie-consent-buttons">
-                <button class="cookie-consent-button cookie-consent-accept">Přijmout</button>
-                <button class="cookie-consent-button cookie-consent-reject">Odmítnout</button>
+            <div class="hody-tag">Připravujeme</div>
+            <h3 class="hody-name">Krojované hody<br>Mackovice 2026</h3>
+            <p class="hody-desc">Tradiční krojované hody s průvodem, cimbálovou muzikou a bohatým programem pro celou vesnici. Přijďte prožít den plný moravské pohody.</p>
+            <a href="hody/2026.html" class="btn-primary btn-primary--wine">
+              <span class="btn-label">Celý program</span>
+              <span class="btn-icon-wrap" aria-hidden="true">
+                <svg width="15" height="15" viewBox="0 0 15 15" fill="none">
+                  <path d="M2.5 7.5h10M8 3.5l4 4-4 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+            </a>
+          </div>
+          <div class="hody-featured-right">
+            <div class="hody-img-bezel">
+              <div class="hody-img-inner">
+                <img src="img/hody26showcase.jpg" alt="Krojované hody 2026" loading="lazy">
+              </div>
             </div>
+          </div>
         </div>
+
+        <!-- Past events -->
+        <div class="hody-list" data-reveal data-reveal-delay="2">
+          <h3 class="hody-list-title">Minulé ročníky</h3>
+          <div class="hody-list-items">
+            <a href="hody/2025.html" class="hody-item">
+              <span class="hody-item-year">2025</span>
+              <span class="hody-item-name">Krojované hody Mackovice · 26. července 2025</span>
+              <span class="hody-item-arrow" aria-hidden="true">
+                <svg width="14" height="14" viewBox="0 0 15 15" fill="none">
+                  <path d="M2.5 7.5h10M8 3.5l4 4-4 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ======= O NÁS ======= -->
+    <section class="section-about" id="o-nas">
+      <div class="container">
+        <div class="about-grid">
+
+          <div class="about-ornament-col" aria-hidden="true" data-reveal>
+            <svg class="about-ornament-svg" viewBox="0 0 280 420" fill="none">
+              <!-- Stylized Moravian folk motif: vines, tulips, grapes -->
+              <line x1="140" y1="10" x2="140" y2="410" stroke="currentColor" stroke-width="1"/>
+              <!-- Central tulip top -->
+              <path d="M140 80 C130 55 108 52 112 38 C126 42 130 58 140 60 C150 58 154 42 168 38 C172 52 150 55 140 80Z" fill="currentColor"/>
+              <path d="M140 80 C132 68 118 70 116 58 C128 54 136 68 140 80Z" fill="currentColor" opacity="0.5"/>
+              <path d="M140 80 C148 68 162 70 164 58 C152 54 144 68 140 80Z" fill="currentColor" opacity="0.5"/>
+              <!-- Stem leaves upper -->
+              <path d="M140 130 C128 115 104 120 100 106 C116 98 132 114 140 130Z" fill="currentColor" opacity="0.6"/>
+              <path d="M140 130 C152 115 176 120 180 106 C164 98 148 114 140 130Z" fill="currentColor" opacity="0.6"/>
+              <!-- Side tulips -->
+              <path d="M100 190 C90 165 68 162 72 148 C86 152 90 168 100 190Z" fill="currentColor" opacity="0.7"/>
+              <path d="M100 190 C94 178 80 180 78 168 C90 164 96 178 100 190Z" fill="currentColor" opacity="0.4"/>
+              <path d="M180 190 C190 165 212 162 208 148 C194 152 190 168 180 190Z" fill="currentColor" opacity="0.7"/>
+              <path d="M180 190 C186 178 200 180 202 168 C190 164 184 178 180 190Z" fill="currentColor" opacity="0.4"/>
+              <!-- Stem leaves lower -->
+              <path d="M140 230 C128 215 104 220 100 206 C116 198 132 214 140 230Z" fill="currentColor" opacity="0.6"/>
+              <path d="M140 230 C152 215 176 220 180 206 C164 198 148 214 140 230Z" fill="currentColor" opacity="0.6"/>
+              <!-- Grape cluster -->
+              <circle cx="140" cy="295" r="9" fill="currentColor" opacity="0.5"/>
+              <circle cx="126" cy="310" r="9" fill="currentColor" opacity="0.45"/>
+              <circle cx="154" cy="310" r="9" fill="currentColor" opacity="0.45"/>
+              <circle cx="118" cy="326" r="9" fill="currentColor" opacity="0.4"/>
+              <circle cx="140" cy="326" r="9" fill="currentColor" opacity="0.4"/>
+              <circle cx="162" cy="326" r="9" fill="currentColor" opacity="0.4"/>
+              <circle cx="126" cy="342" r="9" fill="currentColor" opacity="0.35"/>
+              <circle cx="154" cy="342" r="9" fill="currentColor" opacity="0.35"/>
+              <circle cx="140" cy="358" r="9" fill="currentColor" opacity="0.3"/>
+              <!-- Leaf near grape -->
+              <path d="M140 285 C120 262 110 250 140 245 C170 250 160 262 140 285Z" fill="currentColor" opacity="0.55"/>
+            </svg>
+          </div>
+
+          <div class="about-content" data-reveal data-reveal-delay="1">
+            <div class="eyebrow">
+              <span class="eyebrow-dot" aria-hidden="true"></span>
+              O spolku
+            </div>
+            <h2 class="section-title">Tradice, které<br><em>žijí dál</em></h2>
+            <div class="about-text">
+              <p>Mackovská chasa z.&nbsp;s. je spolek z&nbsp;Mackovic v&nbsp;okrese Znojmo, jehož posláním je udržovat a&nbsp;rozvíjet tradici krojovaných hodů — jednu z&nbsp;nejkrásnějších součástí folklórní kultury Jižní Moravy.</p>
+              <p>Pořádáme krojované hody, zachováváme lidové zvyky a&nbsp;sdružujeme nadšence, kteří chtějí, aby tyto tradice žily i&nbsp;pro budoucí generace.</p>
+            </div>
+            <div class="about-values">
+              <div class="about-value" data-reveal data-reveal-delay="2">
+                <span class="about-value-label">Tradice</span>
+                <span class="about-value-desc">Krojované hody s&nbsp;hlubokou historií v&nbsp;Mackovicích</span>
+              </div>
+              <div class="about-value" data-reveal data-reveal-delay="3">
+                <span class="about-value-label">Autenticita</span>
+                <span class="about-value-desc">Krásné kyjovské kroje, cimbálová muzika a&nbsp;lidové zvyky</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ======= HISTORIE ======= -->
+    <section class="section-history" hidden>
+      <div class="container">
+        <div class="history-inner" data-reveal>
+          <div class="history-left">
+            <div class="eyebrow">
+              <span class="eyebrow-dot" aria-hidden="true"></span>
+              Historie
+            </div>
+            <h2 class="section-title">Naše kořeny</h2>
+          </div>
+          <div class="history-right">
+            <p class="history-lead">Krojované hody v&nbsp;Mackovicích mají hluboké kořeny v&nbsp;moravské folklorní tradici. Spolek Mackovská chasa z.&nbsp;s. vznikl s&nbsp;jediným cílem&nbsp;— udržet tuto tradici živou a&nbsp;předat ji dalším generacím.</p>
+            <p>Naši předkové slavili hody jako poděkování za úrodu a&nbsp;příležitost k&nbsp;setkání celé komunity. My navazujeme na tuto tradici a&nbsp;obohacujeme ji o&nbsp;nové prvky, přičemž zachováváme její autentickou duši.</p>
+          </div>
+        </div>
+        <div class="history-image-strip" data-reveal data-reveal-delay="1">
+          <div class="strip-img-wrap">
+            <img src="https://picsum.photos/seed/morava-folk-1/480/320" alt="Historické foto" loading="lazy">
+          </div>
+          <div class="strip-img-wrap">
+            <img src="https://picsum.photos/seed/morava-folk-2/480/320" alt="Historické foto" loading="lazy">
+          </div>
+          <div class="strip-img-wrap">
+            <img src="https://picsum.photos/seed/morava-folk-3/480/320" alt="Historické foto" loading="lazy">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======= ČLENOVÉ ======= -->
+    <section class="section-members" id="clenove">
+      <div class="container">
+
+        <div class="section-header" data-reveal>
+          <div class="eyebrow">
+            <span class="eyebrow-dot" aria-hidden="true"></span>
+            Členové
+          </div>
+          <h2 class="section-title">Naše chasa</h2>
+          <p class="section-sub">Lidé, kteří stojí za Mackovskou chasou a&nbsp;udržují tradici krojovaných hodů živou.</p>
+        </div>
+
+        <div class="members-group" data-reveal>
+          <h3 class="members-group-title">
+            <span class="eyebrow-dot" aria-hidden="true"></span>
+            Výbor spolku
+          </h3>
+        </div>
+
+        <div class="members-grid members-grid--board">
+          <div class="member-card" data-reveal data-reveal-delay="1">
+            <div class="member-photo-bezel">
+              <div class="member-photo-inner">
+                <img src="img/predseda.JPG" alt="Milan Hoff, předseda" loading="lazy">
+              </div>
+            </div>
+            <span class="member-name">Milan Hoff</span>
+            <span class="member-role">Předseda</span>
+          </div>
+          <div class="member-card" data-reveal data-reveal-delay="2">
+            <div class="member-photo-bezel">
+              <div class="member-photo-inner">
+                <img src="img/mistopredseda.JPG" alt="Adam Pokorný, místopředseda" loading="lazy">
+              </div>
+            </div>
+            <span class="member-name">Adam Pokorný</span>
+            <span class="member-role">Místopředseda</span>
+          </div>
+          <div class="member-card" data-reveal data-reveal-delay="3">
+            <div class="member-photo-bezel">
+              <div class="member-photo-inner">
+                <img src="img/pokladnik.JPG" alt="Petr Kadlčík, pokladník" loading="lazy">
+              </div>
+            </div>
+            <span class="member-name">Petr Kadlčík</span>
+            <span class="member-role">Pokladník</span>
+          </div>
+        </div>
+
+        <div class="members-group members-group--regular" data-reveal>
+          <h3 class="members-group-title">
+            <span class="eyebrow-dot" aria-hidden="true"></span>
+            Členové
+          </h3>
+        </div>
+
+        <div class="members-grid members-grid--board" data-reveal>
+          <div class="member-card" data-reveal data-reveal-delay="1">
+            <div class="member-photo-bezel">
+              <div class="member-photo-inner">
+                <img src="img/zdenekp.JPG" alt="Zdeněk Podaný" loading="lazy">
+              </div>
+            </div>
+            <span class="member-name">Zdeněk Podaný</span>
+          </div>
+          <div class="member-card" data-reveal data-reveal-delay="2">
+            <div class="member-photo-bezel">
+              <div class="member-photo-inner">
+                <img src="img/martind.JPG" alt="Martin Dokoupil" loading="lazy">
+              </div>
+            </div>
+            <span class="member-name">Martin Dokoupil</span>
+          </div>
+          <div class="member-card" data-reveal data-reveal-delay="3">
+            <div class="member-photo-bezel">
+              <div class="member-photo-inner">
+                <img src="img/davidm.JPG" alt="David Myška" loading="lazy">
+              </div>
+            </div>
+            <span class="member-name">David Myška</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ======= STANOVY ======= -->
+    <section class="section-stanovy" id="stanovy">
+      <div class="container">
+        <div class="stanovy-inner" data-reveal>
+          <div class="stanovy-left">
+            <div class="eyebrow">
+              <span class="eyebrow-dot" aria-hidden="true"></span>
+              Dokument
+            </div>
+            <h2 class="section-title">Stanovy<br>spolku</h2>
+            <p>Stanovy Mackovské chasy z.&nbsp;s. upravují účel a&nbsp;cíle spolku, podmínky členství a&nbsp;organizační strukturu.</p>
+            <a href="docs/mc-stanovy-v3.pdf" class="btn-primary" target="_blank" rel="noopener">
+              <span class="btn-label">Stáhnout stanovy</span>
+              <span class="btn-icon-wrap" aria-hidden="true">
+                <svg width="15" height="15" viewBox="0 0 15 15" fill="none">
+                  <path d="M7.5 2v8M4 7.5l3.5 3.5L11 7.5M2.5 12.5h10" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+            </a>
+          </div>
+          <div class="stanovy-card">
+            <div class="stanovy-card-inner">
+              <svg class="stanovy-ornament" viewBox="0 0 60 60" fill="none" aria-hidden="true">
+                <circle cx="30" cy="30" r="28" stroke="currentColor" stroke-width="0.75"/>
+                <circle cx="30" cy="30" r="3.5" fill="currentColor"/>
+                <path d="M30 26 C28 20 23 18 30 12 C37 18 32 20 30 26Z" fill="currentColor" opacity="0.6"/>
+                <path d="M30 34 C32 40 37 42 30 48 C23 42 28 40 30 34Z" fill="currentColor" opacity="0.6"/>
+                <path d="M26 30 C20 28 18 23 12 30 C18 37 20 32 26 30Z" fill="currentColor" opacity="0.6"/>
+                <path d="M34 30 C40 32 42 37 48 30 C42 23 40 28 34 30Z" fill="currentColor" opacity="0.6"/>
+              </svg>
+              <p class="stanovy-excerpt">"Účel spolku je podpora a&nbsp;rozvoj tradičních lidových zvyků v&nbsp;obci Mackovice a&nbsp;okolí, zejména krojovaných hodů a&nbsp;zapojení lidí do kulturního života prostřednictvím pořádání tradičních akcí."</p>
+              <span class="stanovy-source">Stanovy spolku, čl. 1</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======= KONTAKT ======= -->
+    <section class="section-contact" id="kontakt">
+      <div class="container">
+        <div class="contact-inner" data-reveal>
+          <div class="contact-left">
+            <div class="eyebrow eyebrow--light">
+              <span class="eyebrow-dot" aria-hidden="true"></span>
+              Kontakt
+            </div>
+            <h2 class="section-title section-title--light">Napište<br>nám</h2>
+          </div>
+          <div class="contact-details">
+            <div class="contact-item" data-reveal data-reveal-delay="1">
+              <span class="contact-label">Spolek</span>
+              <span class="contact-value">Mackovská chasa z.&nbsp;s.</span>
+            </div>
+            <div class="contact-item" data-reveal data-reveal-delay="2">
+              <span class="contact-label">Sídlo</span>
+              <span class="contact-value">Mackovice 49, 671 78 Mackovice</span>
+            </div>
+            <div class="contact-item" data-reveal data-reveal-delay="3">
+              <span class="contact-label">E-mail</span>
+              <a href="mailto:mackovskachasa@gmail.com" class="contact-value contact-value--link">mackovskachasa@gmail.com</a>
+            </div>
+            <div class="contact-item" data-reveal data-reveal-delay="4">
+              <span class="contact-label">Datová schránka</span>
+              <span class="contact-value">ghfvwwd</span>
+            </div>
+            <div class="contact-item" data-reveal data-reveal-delay="5">
+              <span class="contact-label">Web</span>
+              <a href="https://mackovskachasa.cz" class="contact-value contact-value--link">mackovskachasa.cz</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-ornament-strip" aria-hidden="true">
+          <div class="ornament-repeat">
+            <svg viewBox="0 0 60 30" fill="none" class="ornament-unit">
+              <path d="M30 15 C26 8 18 8 20 2 C26 4 28 10 30 15Z" fill="currentColor" opacity="0.3"/>
+              <path d="M30 15 C34 8 42 8 40 2 C34 4 32 10 30 15Z" fill="currentColor" opacity="0.3"/>
+              <path d="M30 15 C26 22 18 22 20 28 C26 26 28 20 30 15Z" fill="currentColor" opacity="0.3"/>
+              <path d="M30 15 C34 22 42 22 40 28 C34 26 32 20 30 15Z" fill="currentColor" opacity="0.3"/>
+              <circle cx="30" cy="15" r="3" fill="currentColor" opacity="0.4"/>
+            </svg>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ======= FOOTER ======= -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <span class="footer-logo">Mackovská chasa z.&nbsp;s.</span>
+          <p class="footer-tagline">Krojované hody · Mackovice · Jižní Morava</p>
+        </div>
+        <nav class="footer-nav" aria-label="Footer navigace">
+          <a href="#hody">Hody</a>
+          <a href="#o-nas">O nás</a>
+          <a href="#clenove">Členové</a>
+          <a href="#stanovy">Stanovy</a>
+          <a href="#kontakt">Kontakt</a>
+        </nav>
+        <p class="footer-copy">© 2026 Mackovská chasa z.&nbsp;s.</p>
+      </div>
+      <div class="footer-meta">
+        <div class="footer-meta-left">
+          <span>IČO: <a href="https://ares.gov.cz/ekonomicke-subjekty/res/23022612" target="_blank" rel="noopener">23022612</a></span>
+          <span><a href="https://verejnerejstriky.msp.gov.cz/vypis/1271665" target="_blank" rel="noopener">Spolek zapsaný v&nbsp;rejstříku spolků</a></span>
+          <span>Bankovní účet: 6803739359/0800</span>
+        </div>
+        <div class="footer-meta-right">
+          <a href="https://www.facebook.com/profile.php?id=61574904335853" target="_blank" rel="noopener" class="footer-fb" aria-label="Facebook">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987H7.898V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"/>
+            </svg>
+            Facebook
+          </a>
+        </div>
+      </div>
     </div>
+  </footer>
 
-    <script src="js/script.js"></script>
-    <script src="js/cookie-consent.js"></script>
+  <script src="main.js"></script>
 </body>
-</html> 
+</html>
